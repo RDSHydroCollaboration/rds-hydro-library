@@ -33,10 +33,11 @@ function applyLang() {
   localStorage.setItem("lang", lang);
   document.querySelectorAll("#lang button").forEach(b => b.classList.toggle("on", b.dataset.l === lang));
   $("#title").textContent = t("title"); document.title = t("title");
-  $("#tab-types").textContent = t("types"); $("#tab-map").textContent = t("map");
+  const L = (s, k) => { $(s + " .l").textContent = t(k); };
+  L("#tab-types", "types"); L("#tab-map", "map");
   $("#q").placeholder = t("search");
-  $("#expand").textContent = t("expand"); $("#collapse").textContent = t("collapse");
-  $("#tx-expand").textContent = t("expand"); $("#tx-collapse").textContent = t("collapse");
+  L("#expand", "expand"); L("#collapse", "collapse");
+  L("#tx-expand", "expand"); L("#tx-collapse", "collapse");
   $("#dl-lang-label").textContent = t("dl"); $("#dl-lang-label2").textContent = t("dl");
   $("#dl-lang option[value=both]").textContent = t("both");
   $("#foot").textContent = t("foot");

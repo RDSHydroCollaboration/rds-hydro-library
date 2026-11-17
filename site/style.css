@@ -1,7 +1,16 @@
 :root{--c:#4f46e5;--c2:#0ea5e9;--ink:#0f172a;--mut:#64748b;--line:#e2e8f0;--bg:#f1f5f9;--card:#fff;--amber:#d97706;--r:12px;--sh:0 1px 2px rgba(15,23,42,.06),0 4px 16px rgba(15,23,42,.06)}
 *{box-sizing:border-box}
 body{margin:0;font:14px/1.45 Inter,"Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink)}
-header{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:linear-gradient(120deg,#312e81,#4f46e5 55%,#0ea5e9);color:#fff;flex-wrap:wrap;gap:10px;box-shadow:0 2px 12px rgba(49,46,129,.35)}
+header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:14px 28px;background:linear-gradient(120deg,#312e81,#4f46e5 55%,#0ea5e9);color:#fff;gap:10px;box-shadow:0 2px 12px rgba(49,46,129,.35)}
+header .seg{justify-self:end}
+.tabs{display:flex;gap:6px;background:rgba(255,255,255,.16);border-radius:16px;padding:5px;justify-self:center}
+.tabs button{display:inline-flex;align-items:center;gap:9px;border:0;background:transparent;color:#fff;padding:11px 26px;cursor:pointer;border-radius:12px;font:inherit;font-size:16px;font-weight:600;transition:all .15s}
+.tabs button .ic{width:20px;height:20px}
+.tabs button:hover{background:rgba(255,255,255,.2)}
+.tabs button.on{background:#fff;color:var(--c);box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.ic{width:16px;height:16px;flex:none;vertical-align:-3px}
+.tools button,.dl button{display:inline-flex;align-items:center;gap:6px}
+@media(max-width:800px){header{grid-template-columns:1fr auto}.tabs{grid-column:1/-1;order:3;justify-self:stretch}.tabs button{flex:1;justify-content:center}}
 h1{font-size:19px;margin:0;font-weight:700;letter-spacing:-.01em}
 .bar{display:flex;gap:14px;align-items:center}
 .seg{display:inline-flex;background:rgba(255,255,255,.16);border-radius:999px;padding:3px;gap:2px}
