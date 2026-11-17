@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RDS Hydro Library</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1 id="title">RDS Hydro Library</h1>
+  <div class="bar">
+    <div class="seg" id="lang"><button data-l="no">NO</button><button data-l="en">EN</button></div>
+    <div class="seg" id="tabs"><button data-t="types" id="tab-types"></button><button data-t="map" id="tab-map"></button></div>
+  </div>
+</header>
+<main>
+  <section id="types">
+    <div class="tools">
+      <input id="q" type="search">
+      <span id="filters"></span>
+      <span class="dl"><label id="dl-lang-label"></label>
+        <select id="dl-lang"><option value="no">NO</option><option value="en">EN</option><option value="both"></option></select>
+        <button data-f="csv">CSV</button><button data-f="xlsx">XLSX</button><button data-f="json">JSON</button></span>
+    </div>
+    <table id="table"><thead></thead><tbody></tbody></table>
+  </section>
+  <section id="map" hidden>
+    <div class="tools">
+      <button id="expand"></button><button id="collapse"></button>
+      <span class="dl"><label id="dl-lang-label2"></label>
+        <button data-f="tcsv">CSV</button><button data-f="txlsx">XLSX</button><button data-f="tjson">JSON</button></span>
+    </div>
+    <div id="mm" class="mm"></div>
+  </section>
+</main>
+<footer id="foot"></footer>
+<script src="vendor/xlsx.full.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+:root{--c:#0b5c8a;--bg:#f6f8fa}
+*{box-sizing:border-box}
+body{margin:0;font:14px system-ui,sans-serif;background:var(--bg);color:#1f2328}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:var(--c);color:#fff;flex-wrap:wrap;gap:8px}
+h1{font-size:18px;margin:0}
+.bar{display:flex;gap:12px}
+.seg button{border:1px solid #fff8;background:transparent;color:#fff;padding:4px 12px;cursor:pointer}
+.seg button.on{background:#fff;color:var(--c)}
+main{padding:16px 20px}
+.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.tools input,.tools select{padding:5px 8px}
+.tools button,.dl button{padding:5px 10px;cursor:pointer}
+.dl{margin-left:auto;display:flex;gap:6px;align-items:center}
+table{border-collapse:collapse;width:100%;background:#fff}
+th,td{border:1px solid #d0d7de;padding:5px 8px;text-align:left}
+th{background:#eaeef2}
+.mm{background:#fff;border:1px solid #d0d7de;padding:12px;overflow:auto}
+.mm ul{list-style:none;margin:0;padding-left:22px;border-left:1px solid #b6c2cc}
+.mm>ul{border:0;padding:0}
+.mm li{margin:4px 0}
+.node{display:inline-block;padding:3px 10px;border:1px solid var(--c);border-radius:14px;background:#e8f3fa;cursor:default}
+.node .code{color:#57606a;font-size:12px;margin-right:6px}
+.tg{cursor:pointer;margin-right:4px;user-select:none;color:var(--c)}
+footer{padding:12px 20px;color:#57606a;font-size:12px}

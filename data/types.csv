@@ -1,0 +1,6 @@
+code,label_no,label_en,parent,attr_category
+TYPE-1,Eksempeltype A (plassholder),Example type A (placeholder),,component
+TYPE-1.1,Eksempeltype A1 (plassholder),Example type A1 (placeholder),TYPE-1,component
+TYPE-1.2,Eksempeltype A2 (plassholder),Example type A2 (placeholder),TYPE-1,component
+TYPE-2,Eksempeltype B (plassholder),Example type B (placeholder),,system
+TYPE-2.1,Eksempeltype B1 (plassholder),Example type B1 (placeholder),TYPE-2,system

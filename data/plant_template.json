@@ -1,0 +1,7 @@
+[
+  {"code": "PLANT", "label": {"no": "Kraftverk (plassholder)", "en": "Power plant (placeholder)"}, "parent": null},
+  {"code": "PLANT.1", "label": {"no": "Eksempelsystem 1 (plassholder)", "en": "Example system 1 (placeholder)"}, "parent": "PLANT", "type": "TYPE-2"},
+  {"code": "PLANT.1.1", "label": {"no": "Eksempelkomponent 1.1 (plassholder)", "en": "Example component 1.1 (placeholder)"}, "parent": "PLANT.1", "type": "TYPE-1.1"},
+  {"code": "PLANT.1.2", "label": {"no": "Eksempelkomponent 1.2 (plassholder)", "en": "Example component 1.2 (placeholder)"}, "parent": "PLANT.1", "type": "TYPE-1.2"},
+  {"code": "PLANT.2", "label": {"no": "Eksempelsystem 2 (plassholder)", "en": "Example system 2 (placeholder)"}, "parent": "PLANT"}
+]

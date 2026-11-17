@@ -1,0 +1,37 @@
+name: Suggest a change
+description: Propose a new or changed code, type or template node
+labels: [suggestion]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What do you suggest?
+      options: [New code, Change preferred term, Move in hierarchy, Remove, Other]
+    validations: {required: true}
+  - type: input
+    id: code
+    attributes: {label: Code}
+    validations: {required: true}
+  - type: input
+    id: no
+    attributes: {label: Preferred term (Norwegian / norsk)}
+    validations: {required: true}
+  - type: input
+    id: en
+    attributes: {label: Preferred term (English)}
+    validations: {required: true}
+  - type: input
+    id: parent
+    attributes: {label: Parent code}
+  - type: textarea
+    id: why
+    attributes:
+      label: Rationale
+      description: In your own words. Do not paste text from IEC/ISO standards or definitions.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have not copied text from any standard.
+          required: true

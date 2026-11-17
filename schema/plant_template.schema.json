@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Plant template",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["code", "label"],
+    "additionalProperties": false,
+    "properties": {
+      "code": {"type": "string", "minLength": 1},
+      "parent": {"type": ["string", "null"]},
+      "type": {"type": ["string", "null"], "description": "Code in data/types.csv"},
+      "label": {
+        "type": "object",
+        "required": ["no", "en"],
+        "properties": {
+          "no": {"type": "string", "minLength": 1, "pattern": "\\S"},
+          "en": {"type": "string", "minLength": 1, "pattern": "\\S"}
+        },
+        "patternProperties": {"^[a-z]{2,3}$": {"type": "string"}},
+        "additionalProperties": false
+      }
+    }
+  }
+}
