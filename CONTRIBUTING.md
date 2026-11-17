@@ -19,3 +19,7 @@ Every PR runs `python scripts/validate.py` (unique codes, valid parents, `no` an
 python scripts/build_site.py
 python -m http.server -d site
 ```
+
+## Edit mode on the site
+
+Click **Edit** in the site header to add, change or delete entries in the type table and plant template. Changes stay in your browser (a draft). Use **Submit for review** to download the changed files and open a prefilled issue; attach the files there. Maintainers review codes and translations before merging. Both NO and EN terms are required.

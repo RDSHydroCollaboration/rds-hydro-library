@@ -42,6 +42,7 @@ function applyLang() {
   $("#dl-lang option[value=both]").textContent = t("both");
   $("#foot").textContent = t("foot");
   renderFilters(); renderTable(); renderMap();
+  if (window.RDSEdit) RDSEdit.relabel();
 }
 
 function renderFilters() {
@@ -61,7 +62,8 @@ function renderTable() {
   const order = [lang, ...langs.filter(l => l !== lang)];
   const dom = attrs.includes("attr_domain") ? "attr_domain" : null;
   const rest = attrs.filter(a => a !== dom);
-  const head = [...(dom ? [""] : []), `<span class="pfx" title="${esc(t("pfx"))}">%</span>${t("code")}`, ...order.map(l => l.toUpperCase()), ...(hasDesc ? [t("desc")] : []), ...rest.map(a => a.slice(5))];
+  const ed = !!(window.RDSEdit && RDSEdit.on);
+  const head = [...(dom ? [""] : []), `<span class="pfx" title="${esc(t("pfx"))}">%</span>${t("code")}`, ...order.map(l => l.toUpperCase()), ...(hasDesc ? [t("desc")] : []), ...rest.map(a => a.slice(5)), ...(ed ? [""] : [])];
   $("#table thead").innerHTML = "<tr>" + head.map((h, i) => `<th${dom && i === 0 ? ' class="dom"' : ""}>${h}</th>`).join("") + "</tr>";
   const byCode = Object.fromEntries(types.map(r => [r.code, r]));
   const kids = {};
@@ -87,7 +89,8 @@ function renderTable() {
     + (dom ? `<td class="dom"><span class="dm dm-${esc(r[dom])}" title="${esc(r[dom])}">${esc(r[dom])}</span></td>` : "")
     + `<td class="code" style="padding-left:${8 + depth * 22}px">${tg(r, n, closed)}<span class="pfx" title="${esc(t("pfx"))}">%</span>${esc(r.code)}</td>`
     + [...order.map(l => r["label_" + l]), ...(hasDesc ? [r["desc_" + lang] || r.desc_en] : []), ...rest.map(a => r[a])]
-      .map((v, i) => `<td${i === 0 ? ' class="lbl"' : ""}>${esc(v)}</td>`).join("") + "</tr>").join("");
+      .map((v, i) => `<td${i === 0 ? ' class="lbl"' : ""}>${esc(v)}</td>`).join("")
+    + (ed ? `<td class="act">${RDSEdit.rowActions(r.code)}</td>` : "") + "</tr>").join("");
 }
 
 const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
@@ -122,8 +125,17 @@ function renderInfo() {
     + row(t("code"), n.code)
     + names.map(l => row(l === lang ? l.toUpperCase() + " ●" : l.toUpperCase(), n.label[l])).join("")
     + row(t("ebl"), n.ebl_code) + row(t("comment"), n.comment) + row(t("type"), n.type)
-    + `</dl>` + (n.en_draft ? `<p class="muted">${t("draft")}</p>` : "");
+    + `</dl>` + (n.en_draft ? `<p class="muted">${t("draft")}</p>` : "")
+    + (window.RDSEdit && RDSEdit.on ? `<div class="act">${RDSEdit.rowActions(n.id)}</div>` : "");
 }
+window.RDSApp = {
+  get types() { return types; }, get plant() { return plant; }, get cols() { return cols; },
+  get langs() { return langs; }, get attrs() { return attrs; }, get hasDesc() { return hasDesc; },
+  get lang() { return lang; }, get selected() { return selected; }, select: id => { selected = id; },
+  collapsed, open, esc,
+  set: (tp, pl) => { types = tp; plant = pl; },
+  refresh: () => { renderFilters(); renderTable(); renderMap(); }
+};
 function pickLangs() { const v = $("#dl-lang").value; return v === "both" ? langs : [v]; }
 
 function download(kind) {
@@ -179,6 +191,7 @@ async function init() {
   $("#expand").onclick = () => { plant.forEach(n => open.add(n.id)); renderMap(); };
   $("#collapse").onclick = () => { open.clear(); plant.filter(n => !n.parent).forEach(n => open.add(n.id)); renderMap(); };
   applyLang();
+  document.dispatchEvent(new Event("rds-ready"));
 }
 init();
 })();
