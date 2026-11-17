@@ -7,7 +7,7 @@ const $ = s => document.querySelector(s);
 const nav = (navigator.language || "en").toLowerCase();
 let lang = localStorage.getItem("lang") || (/^(no|nb|nn)/.test(nav) ? "no" : "en");
 let types = [], cols = [], langs = [], attrs = [], plant = [], filters = {}, hasDesc = false;
-const open = new Set();
+const open = new Set(), collapsed = new Set();
 
 const lab = (o, l = lang) => (o.label ? o.label[l] || o.label.en : o["label_" + l] || o.label_en) || "";
 const t = k => UI[lang][k];
@@ -36,6 +36,7 @@ function applyLang() {
   $("#tab-types").textContent = t("types"); $("#tab-map").textContent = t("map");
   $("#q").placeholder = t("search");
   $("#expand").textContent = t("expand"); $("#collapse").textContent = t("collapse");
+  $("#tx-expand").textContent = t("expand"); $("#tx-collapse").textContent = t("collapse");
   $("#dl-lang-label").textContent = t("dl"); $("#dl-lang-label2").textContent = t("dl");
   $("#dl-lang option[value=both]").textContent = t("both");
   $("#foot").textContent = t("foot");
@@ -57,14 +58,35 @@ function renderFilters() {
 function renderTable() {
   const q = $("#q").value.trim().toLowerCase();
   const order = [lang, ...langs.filter(l => l !== lang)];
-  const head = [`<span class="pfx" title="${esc(t("pfx"))}">%</span>${t("code")}`, ...order.map(l => l.toUpperCase()), ...(hasDesc ? [t("desc")] : []), t("parent"), ...attrs.map(a => a.slice(5))];
-  $("#table thead").innerHTML = "<tr>" + head.map(h => `<th>${h}</th>`).join("") + "</tr>";
-  const rows = types.filter(r => attrs.every(a => !filters[a] || r[a] === filters[a]))
-    .filter(r => !q || [r.code, ...langs.map(l => r["label_" + l]), ...langs.map(l => r["desc_" + l])].some(v => (v || "").toLowerCase().includes(q)));
-      const pc = c => `<span class="pfx" title="${esc(t("pfx"))}">%</span>${esc(c)}`;
-      const pi = order.length + (hasDesc ? 1 : 0);
-      $("#table tbody").innerHTML = rows.map(r => `<tr><td class="code">${pc(r.code)}</td>` + [...order.map(l => r["label_" + l]), ...(hasDesc ? [r["desc_" + lang] || r.desc_en] : []), r.parent, ...attrs.map(a => r[a])]
-        .map((v, i) => i === pi && v ? `<td class="code">${pc(v)}</td>` : `<td>${esc(v)}</td>`).join("") + "</tr>").join("");
+  const dom = attrs.includes("attr_domain") ? "attr_domain" : null;
+  const rest = attrs.filter(a => a !== dom);
+  const head = [...(dom ? [""] : []), `<span class="pfx" title="${esc(t("pfx"))}">%</span>${t("code")}`, ...order.map(l => l.toUpperCase()), ...(hasDesc ? [t("desc")] : []), ...rest.map(a => a.slice(5))];
+  $("#table thead").innerHTML = "<tr>" + head.map((h, i) => `<th${dom && i === 0 ? ' class="dom"' : ""}>${h}</th>`).join("") + "</tr>";
+  const byCode = Object.fromEntries(types.map(r => [r.code, r]));
+  const kids = {};
+  types.forEach(r => (kids[byCode[r.parent] ? r.parent : ""] ||= []).push(r));
+  const filtering = q || attrs.some(a => filters[a]);
+  const hit = new Set();
+  if (filtering) {
+    types.filter(r => attrs.every(a => !filters[a] || r[a] === filters[a]))
+      .filter(r => !q || [r.code, ...langs.map(l => r["label_" + l]), ...langs.map(l => r["desc_" + l])].some(v => (v || "").toLowerCase().includes(q)))
+      .forEach(r => { for (let x = r; x; x = byCode[x.parent]) hit.add(x.code); });
+  }
+  const out = [];
+  const walk = (p, depth) => (kids[p] || []).forEach(r => {
+    if (filtering && !hit.has(r.code)) return;
+    const n = (kids[r.code] || []).length, closed = !filtering && collapsed.has(r.code);
+    out.push({r, depth, n, closed});
+    if (n && !closed) walk(r.code, depth + 1);
+  });
+  walk("", 0);
+  const tg = (r, n, closed) => n ? `<span class="tg" data-t="${esc(r.code)}">${closed ? "▸" : "▾"}</span>` : `<span class="tg leaf"></span>`;
+  $("#table tbody").innerHTML = out.map(({r, depth, n, closed}) =>
+    `<tr class="d${Math.min(depth, 3)}${n ? " parent" : ""}">`
+    + (dom ? `<td class="dom"><span class="dm dm-${esc(r[dom])}" title="${esc(r[dom])}">${esc(r[dom])}</span></td>` : "")
+    + `<td class="code" style="padding-left:${8 + depth * 22}px">${tg(r, n, closed)}<span class="pfx" title="${esc(t("pfx"))}">%</span>${esc(r.code)}</td>`
+    + [...order.map(l => r["label_" + l]), ...(hasDesc ? [r["desc_" + lang] || r.desc_en] : []), ...rest.map(a => r[a])]
+      .map((v, i) => `<td${i === 0 ? ' class="lbl"' : ""}>${esc(v)}</td>`).join("") + "</tr>").join("");
 }
 
 const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
@@ -147,6 +169,12 @@ async function init() {
   $("#tab-types").classList.add("on");
   document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => download(b.dataset.f));
   $("#q").oninput = renderTable;
+  $("#table").onclick = e => {
+    const c = e.target.dataset.t;
+    if (c) { collapsed.has(c) ? collapsed.delete(c) : collapsed.add(c); renderTable(); }
+  };
+  $("#tx-expand").onclick = () => { collapsed.clear(); renderTable(); };
+  $("#tx-collapse").onclick = () => { types.forEach(r => { if (types.some(x => x.parent === r.code)) collapsed.add(r.code); }); renderTable(); };
   $("#expand").onclick = () => { plant.forEach(n => open.add(n.id)); renderMap(); };
   $("#collapse").onclick = () => { open.clear(); plant.filter(n => !n.parent).forEach(n => open.add(n.id)); renderMap(); };
   applyLang();
