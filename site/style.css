@@ -38,3 +38,5 @@ th{background:#eaeef2}
 .tg{cursor:pointer;margin-right:4px;user-select:none;color:var(--c);display:inline-block;min-width:26px;text-align:center;font-size:20px;line-height:24px;border-radius:4px}
 .tg:hover{background:#dbe7f0}
 footer{padding:12px 20px;color:#57606a;font-size:12px}
+.pfx{color:#b45309;font-weight:700;margin-right:1px;cursor:help}
+td.code{white-space:nowrap;font-family:ui-monospace,Consolas,monospace}

@@ -1,6 +1,56 @@
-code,label_no,label_en,parent,attr_category
-TYPE-1,Eksempeltype A (plassholder),Example type A (placeholder),,component
-TYPE-1.1,Eksempeltype A1 (plassholder),Example type A1 (placeholder),TYPE-1,component
-TYPE-1.2,Eksempeltype A2 (plassholder),Example type A2 (placeholder),TYPE-1,component
-TYPE-2,Eksempeltype B (plassholder),Example type B (placeholder),,system
-TYPE-2.1,Eksempeltype B1 (plassholder),Example type B1 (placeholder),TYPE-2,system
+code,label_no,label_en,desc_no,desc_en,parent,attr_domain,attr_class,attr_no_draft
+HQB1,Membranfilter,Membrane separation filter,,,,ALL,HQB,false
+HQB2,Partikkelfilter,Particle filter,,,,ALL,HQB,false
+HQB2.1,Luftpartikkelfilter,Particle filter in gas,,,HQB2,ALL,HQB,false
+HQB2.2,Partikkelfilter i veske,Particle filter in liquid,,,HQB2,ALL,HQB,false
+HQB3,Varegrind,Grate,,,,ALL,HQB,false
+HQB3.1,Finvaregrind,Grate (fine),,,HQB3,ALL,HQB,false
+HQB3.2,Grovvaregrind,Grate (Coarse),,,HQB3,ALL,HQB,false
+HQB4,Fuktabsorbsjon,Moisture absorber,Brukes i silikagel-pustesystemer (krafttransformatorer),Used in silica gel breather systems (Power transformers),,ALL,HQB,false
+D1,Bygning,Building,,,,CW,D,false
+D1.1,Stasjonssbygg,Plant building,"Kraftstasjonsbygg, pumpestasjonsbygg, transformatorstasjonsbygg","Powerplant building, Pump station building, substation building",D1,CW,D,false
+D1.2,Garasje,Garage,,,D1,CW,D,false
+D1.3,Lager,Warehouse,,,D1,CW,D,false
+D1.4,Administrativt bygg,Administrative building,,,D1,CW,D,false
+D1.5,Målestrasjon,Metering station,,,D1,CW,D,false
+D1.6,Teknisk bygg,Technical building,Bygg for utstyr til luke- og portstyring (vann),Water gate control equipment building,D1,CW,D,false
+D1.7,Bolig/Oppholdbygning,Residential building,,,D1,CW,D,false
+D1.8,Porthus,Gatehouse,Port-/bygg for personer og materiell,Human/material gate building,D1,CW,D,false
+D2,Veggsystem,Wall system,,,,CW,D,true
+KL1,Portsystem,Access gate system,,,,CW,KL,false
+KL2,Adkomstkontroll,Access control system,Styrings- og automatiseringssystem for adkomstkontroll,Control and automation system for access control,,CW,KL,false
+A1,Kraftenhet,Power unit,,,,PS,A,true
+A1.1,Vannkraftenhet,Hydro power unit,,,A1,PS,A,true
+A1.1.1,Francis-kraftenhet,Francis power unit,,,A1.1,PS,A,true
+A1.1.2,Kaplan-kraftenhet,Kaplan power unit,,,A1.1,PS,A,true
+A1.1.3,Pelton-kraftenhet,Pelton power unit,,,A1.1,PS,A,true
+A1.1.4,Pumpeturbin-kraftenhet,Pump-turbine power unit,,,A1.1,PS,A,true
+A1.1.5,Bulb-kraftenhet,Bulb power unit,,,A1.1,PS,A,true
+A1.2,Varmekraftenhet,Thermal power unit,,,A1,PS,A,true
+A2,Kraftforbruksenhet,Power consumption unit,Pumpeenhet,Pump unit,,PS,A,true
+AE1,Hus (utstyr),Mechanical equipment housing system,Husingssystem for mekanisk utstyr (f.eks. turbinhus),Housing system for mechanical devices (e.g. turbine housing),,PS,AE,false
+AE2,Skap/kabinett,Cabinet/cubicle,Husingssystem for elektroniske komponenter,Housing system for electronic components,,PS,AE,false
+HE1,Kjølesystem,Cooling system,,,,PS,HE,false
+HE1.1,Luftkjøling,Cooling system (air),Gir kj?ling med luft,Provides cooling through air,HE1,PS,HE,false
+HE1.2,Vannkjøling,Cooling system (water),Gir kj?ling med vann,Provides cooling through water,HE1,PS,HE,false
+HE1.3,Oljekjøling,Cooling system (oil),Gir kj?ling med olje,Provides cooling through oil,HE1,PS,HE,false
+HE1.4,Kjøleanlegg m kjøleveske,Cooling system (cooling medium),"Gir kj?ling med eget kj?lemedium som verken er luft, vann eller olje","Provides cooling through a dedicated cooling medium that is neither air, water or oil",HE1,PS,HE,false
+HE2,Varmesystem,Heating system,,,,PS,HE,false
+HE3,Temperaturreguering,Temperature regulating system,Kan gi b?de oppvarming og kj?ling,Can both provide heating and cooling,,PS,HE,false
+JE1,Kraftoverf?ringssystem,Power transportation system,,,,PS,JE,true
+JE2,Bryteranlegg,Switchgear,,,,PS,JE,true
+KA1,Luke system,Gate system,,,,PS,KA,false
+KA2,Ventil system,Valve system,,,,PS,KA,false
+KA3,Tettningssystem,Seal system,Ikke-statisk tettningssystem,Non-static sealing system,,PS,KA,false
+KA4,Ledeapparat,Guide vane system,Hydro-system (Francis/Kaplan) som regulerer vannstr?mmen inn i turbinen med bevegelige ledeskovler,Hydro (Francis/Kaplan) system regulating the flow of water into the turbine by means of moveable guide vanes,,PS,KA,false
+KJ1,Lager,Bearing,,,,PS,KJ,false
+KJ1.1,Styrelager,Guide bearing,,,KJ1,PS,KJ,false
+KJ1.2,Bærelager,Thrust bearing,,,KJ1,PS,KJ,false
+KJ1.3,Bære- og styrelager,Combined bearing,,,KJ1,PS,KJ,false
+RB1,Vannkraft turbin,Hydro turbine,,,,PS,RB,false
+RB1.1,Francis turbin,Francis turbine,,,RB1,PS,RB,false
+RB1.2,Kaplan turbin,Kaplan turbine,,,RB1,PS,RB,false
+RB1.3,Pelton turbin,Pelton turbine,,,RB1,PS,RB,false
+RB1.4,Pumpeturbin,Pump-turbine,,,RB1,PS,RB,false
+RB1.5,Bulb turbin,Bulb turbine,,,RB1,PS,RB,false
+RB2,Vind turbin,Wind turbine,,,,PS,RB,false

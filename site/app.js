@@ -1,12 +1,12 @@
 (() => {
 const UI = {
-  no: {title: "RDS Vannkraft-bibliotek", types: "Typetabell", map: "Kraftverksmal", search: "Søk…", expand: "Åpne alle", collapse: "Lukk alle", both: "Begge", dl: "Last ned språk:", code: "Kode", parent: "Overordnet", all: "Alle", foot: "Kun koder og egne foretrukne termer. Data: CC-BY-4.0, kode: MIT.", choice: "Valg", or: "eller", choiceNote: "Valg: velg én av alternativene under.", select: "Velg en node for å se informasjon.", ebl: "EBL-kode", comment: "Kommentar", type: "Type", draft: "Engelsk term er et utkast som venter på godkjenning."},
-  en: {title: "RDS Hydro Library", types: "Type table", map: "Plant template", search: "Search…", expand: "Expand all", collapse: "Collapse all", both: "Both", dl: "Download language:", code: "Code", parent: "Parent", all: "All", foot: "Codes and our own preferred terms only. Data: CC-BY-4.0, code: MIT.", choice: "Choice", or: "or", choiceNote: "Choice: pick one of the alternatives below.", select: "Select a node to see its information.", ebl: "EBL code", comment: "Comment", type: "Type", draft: "English term is a draft awaiting approval."}
+  no: {title: "RDS Vannkraft-bibliotek", types: "Typetabell", map: "Kraftverksmal", search: "Søk…", expand: "Åpne alle", collapse: "Lukk alle", both: "Begge", dl: "Last ned språk:", code: "Kode", parent: "Overordnet", all: "Alle", foot: "Kun koder og egne foretrukne termer. Data: CC-BY-4.0, kode: MIT.", choice: "Valg", or: "eller", choiceNote: "Valg: velg én av alternativene under.", select: "Velg en node for å se informasjon.", ebl: "EBL-kode", comment: "Kommentar", type: "Type", draft: "Engelsk term er et utkast som venter på godkjenning.", desc: "Beskrivelse", pfx: "Typekoder starter alltid med %"},
+  en: {title: "RDS Hydro Library", types: "Type table", map: "Plant template", search: "Search…", expand: "Expand all", collapse: "Collapse all", both: "Both", dl: "Download language:", code: "Code", parent: "Parent", all: "All", foot: "Codes and our own preferred terms only. Data: CC-BY-4.0, code: MIT.", choice: "Choice", or: "or", choiceNote: "Choice: pick one of the alternatives below.", select: "Select a node to see its information.", ebl: "EBL code", comment: "Comment", type: "Type", draft: "English term is a draft awaiting approval.", desc: "Description", pfx: "Type codes always start with %"}
 };
 const $ = s => document.querySelector(s);
 const nav = (navigator.language || "en").toLowerCase();
 let lang = localStorage.getItem("lang") || (/^(no|nb|nn)/.test(nav) ? "no" : "en");
-let types = [], cols = [], langs = [], attrs = [], plant = [], filters = {};
+let types = [], cols = [], langs = [], attrs = [], plant = [], filters = {}, hasDesc = false;
 const open = new Set();
 
 const lab = (o, l = lang) => (o.label ? o.label[l] || o.label.en : o["label_" + l] || o.label_en) || "";
@@ -57,11 +57,14 @@ function renderFilters() {
 function renderTable() {
   const q = $("#q").value.trim().toLowerCase();
   const order = [lang, ...langs.filter(l => l !== lang)];
-  $("#table thead").innerHTML = "<tr>" + [t("code"), ...order.map(l => l.toUpperCase()), t("parent"), ...attrs.map(a => a.slice(5))].map(h => `<th>${h}</th>`).join("") + "</tr>";
+  const head = [`<span class="pfx" title="${esc(t("pfx"))}">%</span>${t("code")}`, ...order.map(l => l.toUpperCase()), ...(hasDesc ? [t("desc")] : []), t("parent"), ...attrs.map(a => a.slice(5))];
+  $("#table thead").innerHTML = "<tr>" + head.map(h => `<th>${h}</th>`).join("") + "</tr>";
   const rows = types.filter(r => attrs.every(a => !filters[a] || r[a] === filters[a]))
-    .filter(r => !q || [r.code, ...langs.map(l => r["label_" + l])].some(v => (v || "").toLowerCase().includes(q)));
-  $("#table tbody").innerHTML = rows.map(r => "<tr>" + [r.code, ...order.map(l => r["label_" + l]), r.parent, ...attrs.map(a => r[a])]
-    .map(v => `<td>${esc(v)}</td>`).join("") + "</tr>").join("");
+    .filter(r => !q || [r.code, ...langs.map(l => r["label_" + l]), ...langs.map(l => r["desc_" + l])].some(v => (v || "").toLowerCase().includes(q)));
+      const pc = c => `<span class="pfx" title="${esc(t("pfx"))}">%</span>${esc(c)}`;
+      const pi = order.length + (hasDesc ? 1 : 0);
+      $("#table tbody").innerHTML = rows.map(r => `<tr><td class="code">${pc(r.code)}</td>` + [...order.map(l => r["label_" + l]), ...(hasDesc ? [r["desc_" + lang] || r.desc_en] : []), r.parent, ...attrs.map(a => r[a])]
+        .map((v, i) => i === pi && v ? `<td class="code">${pc(v)}</td>` : `<td>${esc(v)}</td>`).join("") + "</tr>").join("");
 }
 
 const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
@@ -104,7 +107,7 @@ function download(kind) {
   const L = pickLangs(), tpl = kind.startsWith("t"), fmt = kind.replace(/^t/, "");
   let head, rows, json;
   if (!tpl) {
-    head = ["code", ...L.map(l => "label_" + l), "parent", ...attrs];
+    head = ["code", ...L.map(l => "label_" + l), ...L.map(l => "desc_" + l).filter(h => cols.includes(h)), "parent", ...attrs];
     rows = types.map(r => head.map(h => r[h] || ""));
     json = types.map(r => Object.fromEntries(head.map(h => [h, r[h] || ""])));
   } else {
@@ -133,6 +136,7 @@ async function init() {
   langs = cols.filter(h => /^label_[a-z]{2,3}$/.test(h)).map(h => h.slice(6));
   langs = ["no", "en", ...langs.filter(l => l !== "no" && l !== "en")];
   attrs = cols.filter(h => h.startsWith("attr_"));
+  hasDesc = cols.some(h => h.startsWith("desc_"));
   plant = p;
   plant.filter(n => !n.parent).forEach(n => open.add(n.id));
   document.querySelectorAll("#lang button").forEach(b => b.onclick = () => { lang = b.dataset.l; applyLang(); });

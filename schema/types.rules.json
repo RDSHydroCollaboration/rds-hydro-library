@@ -2,6 +2,7 @@
   "required_columns": ["code", "label_no", "label_en", "parent"],
   "language_column_pattern": "^label_[a-z]{2,3}$",
   "attribute_column_pattern": "^attr_[a-z0-9_]+$",
+  "description_column_pattern": "^desc_[a-z]{2,3}$",
   "forbidden_column_words": ["definition", "description", "descr", "text", "note", "comment", "beskrivelse", "definisjon"],
   "required_languages": ["no", "en"]
 }

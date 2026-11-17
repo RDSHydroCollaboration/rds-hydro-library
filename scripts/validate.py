@@ -40,11 +40,14 @@ def validate_types(rules):
             err(f"types.csv: missing column '{c}'")
     lang_re = re.compile(rules["language_column_pattern"])
     attr_re = re.compile(rules["attribute_column_pattern"])
+    desc_re = re.compile(rules["description_column_pattern"])
     for c in cols:
-        if c in rules["required_columns"] or lang_re.match(c) or attr_re.match(c):
+        if c in rules["required_columns"] or lang_re.match(c) or attr_re.match(c) or desc_re.match(c):
             continue
-        err(f"types.csv: column '{c}' not allowed (use label_xx or attr_*)")
+        err(f"types.csv: column '{c}' not allowed (use label_xx, desc_xx or attr_*)")
     for c in cols:
+        if desc_re.match(c):
+            continue
         if any(w in c.lower() for w in rules["forbidden_column_words"]):
             err(f"types.csv: definition-like column '{c}' is forbidden")
     codes = {}
