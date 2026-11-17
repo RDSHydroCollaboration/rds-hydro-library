@@ -20,5 +20,20 @@ th{background:#eaeef2}
 .mm li{margin:4px 0}
 .node{display:inline-block;padding:3px 10px;border:1px solid var(--c);border-radius:14px;background:#e8f3fa;cursor:default}
 .node .code{color:#57606a;font-size:12px;margin-right:6px}
+.split{display:flex;gap:12px;align-items:flex-start}
+.split .mm{flex:1;min-width:0;max-height:75vh}
+.info{width:320px;flex:none;background:#fff;border:1px solid #d0d7de;padding:12px;position:sticky;top:8px;max-height:75vh;overflow:auto}
+.info h2{font-size:16px;margin:0 0 8px}
+.info dt{font-size:12px;color:#57606a;margin-top:8px}
+.info dd{margin:2px 0 0;white-space:normal}
+.muted{color:#57606a;font-size:12px}
+.badge{display:inline-block;background:#fff4d6;border:1px solid #e0b84a;border-radius:10px;padding:2px 8px;font-size:12px}
+.node{cursor:pointer}
+.node.sel{background:#cfe6f5;box-shadow:0 0 0 2px var(--c)}
+.node.choice{background:#fff4d6;border:1px dashed #b8860b;border-radius:4px}
+.node.choice .code{color:#8a5a00;font-weight:600;text-transform:uppercase}
+.mm ul.alts{border-left:2px dashed #b8860b}
+.mm ul.alts>li::before{content:attr(data-or);font-size:11px;color:#8a5a00;margin-right:4px}
+@media(max-width:800px){.split{flex-direction:column}.info{width:100%;position:static}}
 .tg{cursor:pointer;margin-right:4px;user-select:none;color:var(--c)}
 footer{padding:12px 20px;color:#57606a;font-size:12px}

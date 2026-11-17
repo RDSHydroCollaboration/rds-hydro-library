@@ -5,12 +5,17 @@
   "minItems": 1,
   "items": {
     "type": "object",
-    "required": ["code", "label"],
+    "required": ["id", "code", "label"],
     "additionalProperties": false,
     "properties": {
-      "code": {"type": "string", "minLength": 1},
-      "parent": {"type": ["string", "null"]},
+      "id": {"type": "string", "minLength": 1, "description": "Unique node id; codes may repeat across the tree"},
+      "code": {"type": "string", "description": "Code shown on the node; may be empty for choice or grouping nodes"},
+      "parent": {"type": ["string", "null"], "description": "id of the parent node"},
       "type": {"type": ["string", "null"], "description": "Code in data/types.csv"},
+      "kind": {"type": "string", "enum": ["choice"], "description": "choice: children are alternative technologies, pick one"},
+      "ebl_code": {"type": "string"},
+      "comment": {"type": "string", "description": "Free-text maintainer comment, our own wording"},
+      "en_draft": {"type": "boolean", "description": "English label is a draft awaiting reviewer approval"},
       "label": {
         "type": "object",
         "required": ["no", "en"],

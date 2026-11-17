@@ -1,7 +1,4683 @@
 [
-  {"code": "PLANT", "label": {"no": "Kraftverk (plassholder)", "en": "Power plant (placeholder)"}, "parent": null},
-  {"code": "PLANT.1", "label": {"no": "Eksempelsystem 1 (plassholder)", "en": "Example system 1 (placeholder)"}, "parent": "PLANT", "type": "TYPE-2"},
-  {"code": "PLANT.1.1", "label": {"no": "Eksempelkomponent 1.1 (plassholder)", "en": "Example component 1.1 (placeholder)"}, "parent": "PLANT.1", "type": "TYPE-1.1"},
-  {"code": "PLANT.1.2", "label": {"no": "Eksempelkomponent 1.2 (plassholder)", "en": "Example component 1.2 (placeholder)"}, "parent": "PLANT.1", "type": "TYPE-1.2"},
-  {"code": "PLANT.2", "label": {"no": "Eksempelsystem 2 (plassholder)", "en": "Example system 2 (placeholder)"}, "parent": "PLANT"}
+ {
+  "id": "ROOT",
+  "code": "ROOT",
+  "label": {
+   "no": "RDS Mal - Vannkraft",
+   "en": "RDS template - Hydropower"
+  },
+  "parent": null,
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS",
+  "code": "PS",
+  "label": {
+   "no": "PS",
+   "en": "PS"
+  },
+  "parent": "ROOT",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1",
+  "code": "A1",
+  "label": {
+   "no": "Aggregat 1",
+   "en": "Unit 1"
+  },
+  "parent": "ROOT/PS",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1",
+  "code": ".RB1",
+  "label": {
+   "no": "Turbin, Aggregat 1",
+   "en": "Turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1",
+  "ebl_code": "411.001",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg",
+  "code": "",
+  "label": {
+   "no": "Turbinhus",
+   "en": "Turbine housing"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "kind": "choice",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg/.AE1",
+  "code": ".AE1",
+  "label": {
+   "no": "Turbinhus, Francis/Kaplan",
+   "en": "Turbine housing, Francis/Kaplan"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg",
+  "comment": "Spørsmål/Mangler:\n-",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg/.AE1/.NAB1",
+  "code": ".NAB1",
+  "label": {
+   "no": "Øvre lokk, Turbin, Agg 1",
+   "en": "Upper cover, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg/.AE1",
+  "ebl_code": "411.001.600",
+  "comment": "Reservedeler: Gland, pakning, ledeskovlelager",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg/.AE1/.NAB1/.UQB1",
+  "code": ".UQB1",
+  "label": {
+   "no": "Lokkbolt 1",
+   "en": "Cover bolt 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg/.AE1/.NAB1",
+  "comment": "Notater:\n- Kontrolleres jevnlig.\n\n- Kan lage en gruppe UQB1 Lokkboltsystem og alle lokkboltene under.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg/.AE1/.NAB1/.UQBX",
+  "code": ".UQBX",
+  "label": {
+   "no": "Lokkbolt X",
+   "en": "Cover bolt X"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg/.AE1/.NAB1",
+  "comment": "Reservedeler: Gland, pakning, ledeskovlelager",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg/.AE1/.NAD1",
+  "code": ".NAD1",
+  "label": {
+   "no": "Labyrintring, Øvre lokk, Turbin, Agg 1",
+   "en": "Labyrinth ring, upper cover, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg/.AE1",
+  "comment": "Notater/Kommentarer:\n- Dreper trykket før det kommer ut i sugerøret.\n- Skrus mot øvre lokk.\n\nSpørsmål/Mangler:",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg/.AE1/.NAB2",
+  "code": ".NAB2",
+  "label": {
+   "no": "Nedre lokk, Turbin, Agg 1",
+   "en": "Lower cover, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg/.AE1",
+  "ebl_code": "411.001.600",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg/.AE1/.NAD2",
+  "code": ".NAD2",
+  "label": {
+   "no": "Labyrintring, Nedre lokk, Turbin, Agg 1",
+   "en": "Labyrinth ring, lower cover, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg/.AE1",
+  "comment": "Notater/Kommentarer:\n- Dreper trykket før det kommer ut i sugerøret.\n- Skrus mot nedre lokk.\n\nSpørsmål/Mangler:",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg/.AE1~2",
+  "code": ".AE1",
+  "label": {
+   "no": "Turbinhus, Pelton",
+   "en": "Turbine housing, Pelton"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg",
+  "comment": "Spørsmål/Mangler:\n-",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.",
+  "code": ".",
+  "label": {
+   "no": "Oljeinnføringsenhet",
+   "en": "Oil head"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "comment": "Notat:\n- Distribusjon av olje. Et rørsystem.\n- Gjelder kun kaplan\n- Forslag: legge flatt under aggregat da det fysisk går igjennom generator ned til turbin. Leveres normalt ikke som en del av generator, selv om det er påmontert generator.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Spiraltromme, Turbin, A1",
+   "en": "Spiral casing, turbine, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "ebl_code": "411.001.110",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.WPA1/.QMA1",
+  "code": ".QMA1",
+  "label": {
+   "no": "Tappeventil, Spiraltromme, A1",
+   "en": "Drain valve, spiral casing, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.WPA1",
+  "ebl_code": "411.001.110",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.WPA1/.UQB1",
+  "code": ".UQB1",
+  "label": {
+   "no": "Stagring/skovl 1",
+   "en": "Stay ring/vane 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.WPA1",
+  "comment": "Faste stagpilarene mellom øvre og nedre lokk",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.WPA1/.UQBX",
+  "code": ".UQBX",
+  "label": {
+   "no": "Stagring/skovl X",
+   "en": "Stay ring/vane X"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.WPA1",
+  "comment": "Faste stagpilarene mellom øvre og nedre lokk",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg~2",
+  "code": "",
+  "label": {
+   "no": "Løpehjul",
+   "en": "Runner"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "kind": "choice",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg~2/.MLD1",
+  "code": ".MLD1",
+  "label": {
+   "no": "Løpehjul, Frnacis/Pelton, A1",
+   "en": "Runner, Francis/Pelton, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg~2",
+  "ebl_code": "411.001.210",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg~2/.RB1",
+  "code": ".RB1",
+  "label": {
+   "no": "Løpehjulsystem, Kaplan, A1",
+   "en": "Runner system, Kaplan, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg~2",
+  "ebl_code": "411.001.210",
+  "comment": "Regulerbare løpehjulsskovler",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg~2/.RB1/.KK1",
+  "code": ".KK1",
+  "label": {
+   "no": "Servosystem, Løpehjul, Turbin, A1",
+   "en": "Servo system, runner, turbine, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg~2/.RB1",
+  "ebl_code": "411.001.210",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg~2/.RB1/.NAD1",
+  "code": ".NAD1",
+  "label": {
+   "no": "Tetning, Turbin, Agg 1",
+   "en": "Seal, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg~2/.RB1",
+  "ebl_code": "411.001.210",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/valg~2/.RB1/.MLD1",
+  "code": ".MLD1",
+  "label": {
+   "no": "Løpehjul, Turbin, Agg 1",
+   "en": "Runner, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/valg~2/.RB1",
+  "ebl_code": "411.001.210",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Pelton",
+  "code": ".KA1 (Pelton)",
+  "label": {
+   "no": "Ledeapparat, Turbin, A1",
+   "en": "Guide apparatus, turbine, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "ebl_code": "411.001.310",
+  "comment": "Spørsmål/Mangler:\n-",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Nålsystem 1, Turbin, Agg 1",
+   "en": "Needle system 1, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Pelton",
+  "comment": "Spørsmål/Mangler:\n-  Hele nåla.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KA1/.WMD1",
+  "code": ".WMD1",
+  "label": {
+   "no": "Deflektor, Turbin Agg 1",
+   "en": "Deflector, turbine unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KA1",
+  "comment": "Notat:\n- Plassert på utsiden av utløpet til nåla. Styre strålen vekk fra løpehjulet.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KA1/.BGA1",
+  "code": ".BGA1",
+  "label": {
+   "no": "Posisjonssensor, Turbin, Agg 1",
+   "en": "Position sensor, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KA1",
+  "comment": "Notat:\n- Plassert på utsiden av utløpet til nåla. Styre strålen vekk fra løpehjulet.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KA1/.MMA1",
+  "code": ".MMA1",
+  "label": {
+   "no": "Servor (hydraulisk sylinder), Turbin, Agg 1",
+   "en": "Servo (hydraulic cylinder), turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KA1",
+  "comment": "Notat:\n- Skyver nålen inn og ut av hullet.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KAX",
+  "code": ".KAX",
+  "label": {
+   "no": "Nålsystem X, Turbin, Agg 1",
+   "en": "Needle system X, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Pelton",
+  "comment": "Spørsmål/Mangler:\n-  Hele nåla.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KAX/.WMD1",
+  "code": ".WMD1",
+  "label": {
+   "no": "Deflektor, Ledeapparat, Agg 1",
+   "en": "Deflector, guide apparatus, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KAX",
+  "comment": "Reservedeler: Bruddlenker som reservedel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KAX/.BGA1",
+  "code": ".BGA1",
+  "label": {
+   "no": "Posisjonssensor, Turbin, Agg 1",
+   "en": "Position sensor, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KAX",
+  "comment": "Notat:\n- Plassert på utsiden av utløpet til nåla. Styre strålen vekk fra løpehjulet.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KAX/.MMA1",
+  "code": ".MMA1",
+  "label": {
+   "no": "Servor (hydraulisk sylinder), Turbin, Agg 1",
+   "en": "Servo (hydraulic cylinder), turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Pelton/.KAX",
+  "comment": "Notat:\n- Skyver nålen inn og ut av hullet.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Francis",
+  "code": ".KA1 (Francis)",
+  "label": {
+   "no": "Ledeapparat, Turbin, A11",
+   "en": "Guide apparatus, turbine, A11"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "ebl_code": "411.001.310",
+  "comment": "Spørsmål/Mangler:\n-",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Francis/.QPC1",
+  "code": ".QPC1",
+  "label": {
+   "no": "Ledeskovler, Turbin, Agg 1",
+   "en": "Guide vanes, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Francis",
+  "comment": "Spørsmål/Mangler:\nEr det poeng å ha alle skovler under her?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Francis/.WQD1",
+  "code": ".WQD1",
+  "label": {
+   "no": "Lenkearm, Turbin, Agg 1",
+   "en": "Link arm, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Francis",
+  "comment": "Reservedeler: Bruddlenker som reservedel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Francis/.MMA1",
+  "code": ".MMA1",
+  "label": {
+   "no": "Servo, Ledeapparat, Turbin, Agg 1",
+   "en": "Servo, guide apparatus, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Francis",
+  "comment": "Til diskusjon:\nSkal servo ligge på ledeapparat? Ja.\n- På francis er det naturlig å legge den direkte regulatoren, men ikke på pelton. Så kanskje det er best å legge den på ledeapparatet for å synergi.?\n\nHarmonisering: ...",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Francis/.MMA1/.BGA1",
+  "code": ".BGA1",
+  "label": {
+   "no": "Posisjonssensor, Ledeapparat, Agg 1",
+   "en": "Position sensor, guide apparatus, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Francis/.MMA1",
+  "comment": "Spørsmål/Mangler: Riktig kode og komponent?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1_Francis/.WQE1",
+  "code": ".WQE1",
+  "label": {
+   "no": "Reguleringsring, Turbin, Agg 1",
+   "en": "Regulating ring, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1_Francis",
+  "comment": "Spørsmål/Mangler: Riktig kode og komponent?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.LD1",
+  "code": ".LD1",
+  "label": {
+   "no": "Turbinregulatorsystem, Turbin, A1",
+   "en": "Turbine governor system, turbine, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "ebl_code": "414.00X",
+  "comment": "Notat:\n- LD1 Elektronisk regulator er selve sammenstillingen av skap og alt som er installert inne i skapet",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.LD2",
+  "code": ".LD2",
+  "label": {
+   "no": "Elektronisk Løpehjulsregulatorsystem, Turbin, A1",
+   "en": "Electronic runner governor system, turbine, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "comment": "Notat:\n- Inkluderes hvis man har et eget regulatorsystem for løpehjulet. Ofte inkludert på eldre design.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.WPA2",
+  "code": ".WPA2",
+  "label": {
+   "no": "Sugerør, Turbin, A1",
+   "en": "Draft tube, turbine, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.WPA2/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Sugerørkonus, Turbin, A1",
+   "en": "Draft tube cone, turbine, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.WPA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.WPA2/.QMA1",
+  "code": ".QMA1",
+  "label": {
+   "no": "Tappeventil, Sugerør, Turbin, A1",
+   "en": "Drain valve, draft tube, turbine, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.WPA2",
+  "ebl_code": "KX.411.XXX.410.114",
+  "comment": "Notater:\n- Tappeventil oppstrøms turbin",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Sugerørslukesystem, Turbin, A1",
+   "en": "Draft tube gate system, turbine, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "comment": "Notater og diskusjon:\nFunksjon: for å stenge  vann ute slik at turbinen kan vedlikeholdes.\nSystemgrensen mellom aggregat og utløp. Hvis vi skal følge prinsippene (mottakers prinsipp), skal den høre til utløpet.\nFrancis: I avslutningen av sugerøret. En per aggregat.\nPelton: Ulike løsninger. Kan være en for flere.\n\nProdukt: Grensen går etter luke og før avløpstunnel. Sugerørsluke er en del av turbinen. ...",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Sugerørsluke, Turbin, Agg 1",
+   "en": "Draft tube gate, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1",
+  "ebl_code": "KX.411.XXX.410.110",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KA1/.WPA2",
+  "code": ".WPA2",
+  "label": {
+   "no": "Opptrekk, Sugerørsluke,Turbin, Agg 1",
+   "en": "Hoist, draft tube gate, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KA1",
+  "ebl_code": "KX.411.XXX.410.110",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KJ1",
+  "code": ".KJ1",
+  "label": {
+   "no": "Turbinlagersystem, A1",
+   "en": "Turbine bearing system, A1"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KJ1/UPA1",
+  "code": "UPA1?",
+  "label": {
+   "no": "Turbinlager Turbin, Agg 1",
+   "en": "Turbine bearing, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KJ1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.KJ1/EGC1",
+  "code": "EGC1?",
+  "label": {
+   "no": "Varmeveksler, Turbinlager, Agg 1",
+   "en": "Heat exchanger, turbine bearing, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.KJ1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.WQA1",
+  "code": ".WQA1",
+  "label": {
+   "no": "Aksling, Turbin",
+   "en": "Shaft, turbine"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.WQA1/.BSE1",
+  "code": ".BSE1",
+  "label": {
+   "no": "Takometer",
+   "en": "Tachometer"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.WQA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.NAD1",
+  "code": ".NAD1",
+  "label": {
+   "no": "Akseltetningsboks, Turbin, Agg 1",
+   "en": "Shaft seal box, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "comment": "Spørsmål/Mangler:",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.NAD1/.NAD1",
+  "code": ".NAD1",
+  "label": {
+   "no": "Stillstandstetning (revisjonstetning), Akseltetningsboks, Agg 1",
+   "en": "Standstill seal (maintenance seal), shaft seal box, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.NAD1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.JB2_Kaplan",
+  "code": ".JB2(Kaplan)",
+  "label": {
+   "no": "Oljeinnføringsenhet",
+   "en": "Oil head"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "comment": "Notat:\n- Distribusjon av olje. Et rørsystem.\n- Gjelder kun kaplan\n- Forslag: legge flatt under aggregat da det fysisk går igjennom generator ned til turbin. Leveres normalt ikke som en del av generator, selv om det er påmontert generator.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.PG1",
+  "code": ".PG1",
+  "label": {
+   "no": "Mekanisk vern, Agg 1",
+   "en": "Mechanical protection, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RB1",
+  "comment": "Spørsmål/mangler:",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.PG1/n",
+  "code": "",
+  "label": {
+   "no": "Mekanisk ruservern/rusependel",
+   "en": "Mechanical trash protection/pendulum"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.PG1",
+  "comment": "Kommentarer:\n- Måleverdi på klaring.\n- Slitasje på labyrintring er en viktig parameter på re-investering\n- Sentrifugal funksjon - en pendel som",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.PG1/n~2",
+  "code": "",
+  "label": {
+   "no": "Posisjonsbryter",
+   "en": "Position switch"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.PG1",
+  "comment": "Kommentarer:\n- Måleverdi på klaring.\n- Slitasje på labyrintring er en viktig parameter på re-investering",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RB1/.PG1/n~3",
+  "code": "",
+  "label": {
+   "no": "Trykkbryter",
+   "en": "Pressure switch"
+  },
+  "parent": "ROOT/PS/A1/.RB1/.PG1",
+  "comment": "Kommentarer:\n- Måleverdi på klaring.\n- Slitasje på labyrintring er en viktig parameter på re-investering",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1",
+  "code": ".RA1",
+  "label": {
+   "no": "Generator",
+   "en": "Generator"
+  },
+  "parent": "ROOT/PS/A1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg",
+  "code": "",
+  "label": {
+   "no": "Magnetiseringsystem",
+   "en": "Excitation system"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "kind": "choice",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n",
+  "code": "",
+  "label": {
+   "no": "Statisk",
+   "en": "Static"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n/.LD1",
+  "code": ".LD1",
+  "label": {
+   "no": "Magnetiseringssystem, Statisk",
+   "en": "Excitation system, static"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n/.LD1/.TAA1",
+  "code": ".TAA1",
+  "label": {
+   "no": "Magnetiseringstransformator",
+   "en": "Excitation transformer"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n/.LD1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n/.LD1/.QBA1",
+  "code": ".QBA1",
+  "label": {
+   "no": "Feltbryter",
+   "en": "Field breaker"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n/.LD1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n/.LD1/.TBA1",
+  "code": ".TBA1",
+  "label": {
+   "no": "Likeretter",
+   "en": "Rectifier"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n/.LD1",
+  "comment": "Funksjon: Omformer vekselstrøm til likestrøm. AC-DC",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n/.LD1/.KEB1",
+  "code": ".KEB1",
+  "label": {
+   "no": "Spenningsregulator",
+   "en": "Voltage regulator"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n/.LD1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n/.JE1",
+  "code": ".JE1",
+  "label": {
+   "no": "Generatortopp Statisk/Sleperingsarrangement",
+   "en": "Generator top, static/slip ring arrangement"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n",
+  "comment": "For statisk magnetisering\n\nStrømførende system. Lewder strøm fra statisk til roterende.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n/.JE1/n",
+  "code": "",
+  "label": {
+   "no": "Slepering",
+   "en": "Slip ring"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n/.JE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n/.JE1/n~2",
+  "code": "",
+  "label": {
+   "no": "Børsteavsug",
+   "en": "Brush dust extraction"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n/.JE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n/.JE1/n~3",
+  "code": "",
+  "label": {
+   "no": "Børster",
+   "en": "Brushes"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n/.JE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n/.JE1/.FQA1",
+  "code": ".FQA1",
+  "label": {
+   "no": "Deksel, generatortopp",
+   "en": "Cover, generator top"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n/.JE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n~2",
+  "code": "",
+  "label": {
+   "no": "Børsteløst",
+   "en": "Brushless"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n~2/.LD1",
+  "code": ".LD1",
+  "label": {
+   "no": "Magnetiseringssystem, Børsteløs",
+   "en": "Excitation system, brushless"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n~2/.LD1/.TAA1",
+  "code": ".TAA1",
+  "label": {
+   "no": "Magnetiseringstransformator",
+   "en": "Excitation transformer"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n~2/.LD1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n~2/.LD1/.QBA1",
+  "code": ".QBA1",
+  "label": {
+   "no": "Feltbryter",
+   "en": "Field breaker"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n~2/.LD1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n~2/.LD1/.TBA1",
+  "code": ".TBA1",
+  "label": {
+   "no": "Magnetiseringsmaskin/Magnostat",
+   "en": "Exciter machine/Magnostat"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n~2/.LD1",
+  "comment": "Notater:\nVurdere å endre navngivning.\n\nFunksjon: Omformer vekselstrøm til likestrøm. AC-DC-",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n~2/.LD1/.KEB1",
+  "code": ".KEB1",
+  "label": {
+   "no": "Spenningsregulator",
+   "en": "Voltage regulator"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n~2/.LD1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n~2/.AE1",
+  "code": ".AE1",
+  "label": {
+   "no": "Generatortopp, Børsteløs",
+   "en": "Generator top, brushless"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n~2",
+  "comment": "Notat: For børsteløse og roterende magnetisering\n\nKun deksel.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/n~2/.AE1/.HQB1",
+  "code": ".HQB1",
+  "label": {
+   "no": "Luftfilter",
+   "en": "Air filter"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg/n~2/.AE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/valg/.LD1",
+  "code": ".LD1",
+  "label": {
+   "no": "Magnetiseringssystem, DC Feltmaskin/Roterende",
+   "en": "Excitation system, DC field machine/rotating"
+  },
+  "parent": "ROOT/PS/A1/.RA1/valg",
+  "comment": "Notater:\nDC feltmaskin?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KJ1",
+  "code": ".KJ1",
+  "label": {
+   "no": "Lagersystem Øvre/NDE",
+   "en": "Bearing system upper/NDE"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "comment": "Notater:\n- Objekttypen beskriver om det skal være styre, bære eller kombilager.\n\nAvhengig av maskinen har den kombinert bære/styrelager, eller ikke.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KJ1/.UPA",
+  "code": ".UPA",
+  "label": {
+   "no": "Styrelager",
+   "en": "Guide bearing"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KJ1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KJ1/.",
+  "code": ".",
+  "label": {
+   "no": "Bærelager",
+   "en": "Thrust bearing"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KJ1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KJ1/.UPA~2",
+  "code": ".UPA",
+  "label": {
+   "no": "Styre/Bærelager",
+   "en": "Guide/thrust bearing"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KJ1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KJ1/.~2",
+  "code": ".",
+  "label": {
+   "no": "Øvre kryss",
+   "en": "Upper spider"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KJ1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KJ2",
+  "code": ".KJ2",
+  "label": {
+   "no": "Lagersystem DE",
+   "en": "Bearing system DE"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "comment": "Notater:\n- Objekttypen beskriver om det skal være styre, bære eller kombilager.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.JB1",
+  "code": ".JB1",
+  "label": {
+   "no": "Kjølerørsystem",
+   "en": "Cooling pipe system"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "comment": "Notat:\n- Rør\n\nGrensesnitt: Fra veggen i Generatorgruben ( (lokasjon) : Støpte runde rommet generatoren står i. )\n\n- Kjølevannsrør + ringledning. Et rør som går inn som går inn på en ring som fordeler det ut på alle kjølerne. Samlet opp etterpå og tatt til avløp.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.HE2",
+  "code": ".HE2",
+  "label": {
+   "no": "Lagerkjøling",
+   "en": "Bearing cooling"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "comment": "Notater:\n- Lagerkjøling skal ligge på lageret hvis det er integrert, hvis ikke integrert så legger vi den som et eget system under generator.\n- Et separat fysisk sammenstilling som står ved siden av generator.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RK1",
+  "code": ".RK1",
+  "label": {
+   "no": "Stator",
+   "en": "Stator"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "comment": "Notater:\n- Lagerkjøling skal ligge på lageret hvis det er integrert, hvis ikke integrert så legger vi den som et eget system under generator.\n- Et separat fysisk sammenstilling som står ved siden av generator.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RK1/n",
+  "code": "",
+  "label": {
+   "no": "Statorvikling",
+   "en": "Stator winding"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RK1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RK1/n~2",
+  "code": "",
+  "label": {
+   "no": "Statorkjerne/Blikkpakke",
+   "en": "Stator core/laminated core"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RK1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RK1/n~2/.BTA1",
+  "code": ".BTA1",
+  "label": {
+   "no": "Temperatursensor, Spor XX/XY, Blikkpakke, Stator, Generator, Agg 1",
+   "en": "Temperature sensor, slot XX/XY, laminated core, stator, generator, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RK1/n~2",
+  "comment": "Spørsmål/Mangler:",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RK1/n~2/.BTA2",
+  "code": ".BTA2",
+  "label": {
+   "no": "Temperatursensor, Spor XX/XY, Blikkpakke, Stator, Generator, Agg 1",
+   "en": "Temperature sensor, slot XX/XY, laminated core, stator, generator, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RK1/n~2",
+  "comment": "Spørsmål/Mangler:",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RK1/n~3",
+  "code": "",
+  "label": {
+   "no": "Statorhus",
+   "en": "Stator frame"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RK1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RK1/.LE1",
+  "code": ".LE1",
+  "label": {
+   "no": "Temperaturmålesystem, Stator",
+   "en": "Temperature measurement system, stator"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RK1",
+  "comment": "Notater:\n- Hvordan skal vi organisere temperatursensorene? Kan vi lage en gruppe eller ha det under hver komponent?\n\nFordel ved å gruppere: Enkelt å logge feil på et sted.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RK1/.LE1/BTA1",
+  "code": "BTA1",
+  "label": {
+   "no": "Temperatursensor",
+   "en": "Temperature sensor"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RK1/.LE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RK1/n~4",
+  "code": "",
+  "label": {
+   "no": "Kjøler",
+   "en": "Cooler"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RK1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RJ1",
+  "code": ".RJ1",
+  "label": {
+   "no": "Rotor",
+   "en": "Rotor"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "comment": "Notater:\n- Lagerkjøling skal ligge på lageret hvis det er integrert, hvis ikke integrert så legger vi den som et eget system under generator.\n- Et separat fysisk sammenstilling som står ved siden av generator.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RJ1/n",
+  "code": "",
+  "label": {
+   "no": "Rotorpolesystem",
+   "en": "Rotor pole system"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RJ1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RJ1/n~2",
+  "code": "",
+  "label": {
+   "no": "Rotorring",
+   "en": "Rotor rim"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RJ1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RJ1/n~3",
+  "code": "",
+  "label": {
+   "no": "Rotornav",
+   "en": "Rotor hub"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RJ1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RJ1/n~4",
+  "code": "",
+  "label": {
+   "no": "Ventilatorer/Viftering",
+   "en": "Fans/fan ring"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RJ1",
+  "ebl_code": "421.DDD.240",
+  "comment": "Notat:\n- Avklare navn",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RJ1/n~5",
+  "code": "",
+  "label": {
+   "no": "Bremsering",
+   "en": "Brake ring"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RJ1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.RJ1/n~6",
+  "code": "",
+  "label": {
+   "no": "Aksel",
+   "en": "Shaft"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.RJ1",
+  "comment": "Notat:\n- Hvor hører akselen til? Under rotor eller rett under generator?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Bremse/Løftesystem",
+   "en": "Brake/lifting system"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "comment": "Notater:\n- Lagerkjøling skal ligge på lageret hvis det er integrert, hvis ikke integrert så legger vi den som et eget system under generator.\n- Et separat fysisk sammenstilling som står ved siden av generator.\n\nSe standard spec, kapittel 5.4.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KA1/n",
+  "code": "",
+  "label": {
+   "no": "Bremsesylinder",
+   "en": "Brake cylinder"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KA1",
+  "comment": "Notat:\n- Hvor hører akselen til? Under rotor eller rett under generator?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KA1/n~2",
+  "code": "",
+  "label": {
+   "no": "Jekkesylinder",
+   "en": "Jacking cylinder"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KA1",
+  "comment": "Notat:\n- Hvor hører akselen til? Under rotor eller rett under generator?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KE1",
+  "code": ".KE1",
+  "label": {
+   "no": "Trykkoljeavlastningsystem",
+   "en": "Pressure oil relief system"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "comment": "Notater:\n- Skal dette systemet ligge som et separat system under generator eller skal den ligge under lageret?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KE1/.GPA1",
+  "code": ".GPA1",
+  "label": {
+   "no": "Pumpe 1",
+   "en": "Pump 1"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KE1/.GPA2",
+  "code": ".GPA2",
+  "label": {
+   "no": "Pumpe 2",
+   "en": "Pump 2"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KE1/.HQB1",
+  "code": ".HQB1",
+  "label": {
+   "no": "Filter",
+   "en": "Filter"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KE1/.FLA1",
+  "code": ".FLA1",
+  "label": {
+   "no": "SIkkerhetsventil",
+   "en": "Safety valve"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KE1/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Rør",
+   "en": "Pipe"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KE1/PGP1",
+  "code": "PGP1",
+  "label": {
+   "no": "Manometer",
+   "en": "Pressure gauge"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KE1/BPB1",
+  "code": "BPB1",
+  "label": {
+   "no": "Pressostat",
+   "en": "Pressure switch"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/.KE1/n",
+  "code": "",
+  "label": {
+   "no": "Styreskap",
+   "en": "Control cabinet"
+  },
+  "parent": "ROOT/PS/A1/.RA1/.KE1",
+  "comment": "Notater:",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/n",
+  "code": "",
+  "label": {
+   "no": "Akselstrømtrafo",
+   "en": "Shaft current transformer"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "comment": "Notater:\n- Skal denne ligge flatt? Kan plasseres ulike steder etter leverandørspek.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.RA1/n~2",
+  "code": "",
+  "label": {
+   "no": "Signalskap",
+   "en": "Signal cabinet"
+  },
+  "parent": "ROOT/PS/A1/.RA1",
+  "comment": "Notater:\n- Skal denne være med?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1.",
+  "code": ".KA1.",
+  "label": {
+   "no": "Hovedstengesystem",
+   "en": "Main shut-off system"
+  },
+  "parent": "ROOT/PS/A1",
+  "ebl_code": "415.001",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./.JB1",
+  "code": ".JB1",
+  "label": {
+   "no": "Omløpsventilsystem, Hovedstengesystem",
+   "en": "Bypass valve system, main shut-off system"
+  },
+  "parent": "ROOT/PS/A1/.KA1.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./.JB1/.QMA1",
+  "code": ".QMA1",
+  "label": {
+   "no": "Revisjonsventil for omløp, Hovedstengesystem",
+   "en": "Maintenance valve for bypass, main shut-off system"
+  },
+  "parent": "ROOT/PS/A1/.KA1./.JB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./.JB1/.QMA2",
+  "code": ".QMA2",
+  "label": {
+   "no": "Omløpsventil, Hovedstengesystem",
+   "en": "Bypass valve, main shut-off system"
+  },
+  "parent": "ROOT/PS/A1/.KA1./.JB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Hovedventil",
+   "en": "Main valve"
+  },
+  "parent": "ROOT/PS/A1/.KA1.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./.KA1/.NAD1",
+  "code": ".NAD1",
+  "label": {
+   "no": "Tetning 1, hovedventil",
+   "en": "Seal 1, main valve"
+  },
+  "parent": "ROOT/PS/A1/.KA1./.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./.KA1/.NAD2",
+  "code": ".NAD2",
+  "label": {
+   "no": "Tetning 2, hovedventil",
+   "en": "Seal 2, main valve"
+  },
+  "parent": "ROOT/PS/A1/.KA1./.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./.KA1/.NBH",
+  "code": ".NBH",
+  "label": {
+   "no": "Spjeld/Kule",
+   "en": "Butterfly/spherical valve"
+  },
+  "parent": "ROOT/PS/A1/.KA1./.KA1",
+  "comment": "- Navn endres avhengig av type, kode blir uendret.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./.KA1/.QMA1",
+  "code": ".QMA1",
+  "label": {
+   "no": "Tømmeventil",
+   "en": "Emptying valve"
+  },
+  "parent": "ROOT/PS/A1/.KA1./.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./valg",
+  "code": "",
+  "label": {
+   "no": "Ventilstyring",
+   "en": "Valve control"
+  },
+  "parent": "ROOT/PS/A1/.KA1.",
+  "kind": "choice",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./valg/.LA1",
+  "code": ".LA1",
+  "label": {
+   "no": "Lokal kontroll/Ventilstyresystem",
+   "en": "Local control/valve control system"
+  },
+  "parent": "ROOT/PS/A1/.KA1./valg",
+  "comment": "Notater:\n\n-",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./valg/.LA1/.",
+  "code": ".",
+  "label": {
+   "no": "Ventil 1",
+   "en": "Valve 1"
+  },
+  "parent": "ROOT/PS/A1/.KA1./valg/.LA1",
+  "comment": "Notater:\nAE1 - Signalskap - teknisk system\nUCA1 - skap komponent",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./valg/.LA1/.~2",
+  "code": ".",
+  "label": {
+   "no": "Ventil 2",
+   "en": "Valve 2"
+  },
+  "parent": "ROOT/PS/A1/.KA1./valg/.LA1",
+  "comment": "Notater:\nAE1 - Signalskap - teknisk system\nUCA1 - skap komponent",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./valg/.LA2_HB1",
+  "code": ".LA2/HB1",
+  "label": {
+   "no": "Styresystem, hydraulisk",
+   "en": "Control system, hydraulic"
+  },
+  "parent": "ROOT/PS/A1/.KA1./valg",
+  "comment": "Notater:\n- Hvis man har et eget hydraulikksystem for hovedventilen skal man ha med dette systemet.\nSees på som et eget styresystem.\n\nLøsning:\nBruker HB som type (definerer designet og vedlikeholdsbehovet)",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./valg/.LA2_HB1/.HB1",
+  "code": ".HB1",
+  "label": {
+   "no": "Hydraulikkaggregat",
+   "en": "Hydraulic power unit"
+  },
+  "parent": "ROOT/PS/A1/.KA1./valg/.LA2_HB1",
+  "comment": "Notater:\n- Hvis man har et eget hydraulikksystem for hovedventilen skal man ha med dette systemet.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./valg/.LA2_HB1/.CQB1",
+  "code": ".CQB1",
+  "label": {
+   "no": "Akkumulator",
+   "en": "Accumulator"
+  },
+  "parent": "ROOT/PS/A1/.KA1./valg/.LA2_HB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./valg/.LA2_HB1/.UCA1",
+  "code": ".UCA1",
+  "label": {
+   "no": "Styreskap, Turbinregulator, Agg 1",
+   "en": "Control cabinet, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/.KA1./valg/.LA2_HB1",
+  "comment": "Notater:\nAE1 - Signalskap - teknisk system\nUCA1 - skap komponent",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./valg/.JB2",
+  "code": ".JB2",
+  "label": {
+   "no": "Hydraulikkdistrubisjon",
+   "en": "Hydraulic distribution"
+  },
+  "parent": "ROOT/PS/A1/.KA1./valg",
+  "comment": "Notater:",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.KA1./.KK1",
+  "code": ".KK1",
+  "label": {
+   "no": "Servosystem/Torus, Hovedstengesystem",
+   "en": "Servo system/torus, main shut-off system"
+  },
+  "parent": "ROOT/PS/A1/.KA1.",
+  "ebl_code": "415.001.300",
+  "comment": "EBL: Drivsystem",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/.",
+  "code": ".",
+  "label": {
+   "no": "Måletransformator",
+   "en": "Instrument transformer"
+  },
+  "parent": "ROOT/PS/A1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg",
+  "code": "",
+  "label": {
+   "no": "Hydraulikksystem",
+   "en": "Hydraulic system"
+  },
+  "parent": "ROOT/PS/A1",
+  "kind": "choice",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1",
+  "code": ".HB1",
+  "label": {
+   "no": "Hydraulikkanlegg, Høytrykk",
+   "en": "Hydraulic system, high pressure"
+  },
+  "parent": "ROOT/PS/A1/valg",
+  "comment": "Kommentarer:\n- Variasjon i oppsett, og plassering vil dermed variere fra anlegg til anlegg\n- Hvis hydraulikkanlegget server mer enn turbinregulatorsystemet bør den løftes opp: A1.HB1. Hvis den kun server turbin: A1. RB1. HB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1/.HB1",
+  "code": ".HB1",
+  "label": {
+   "no": "Hydraulikkaggregat , Turbinregulator, Agg 1",
+   "en": "Hydraulic power unit, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1/.HB1/.CMA1",
+  "code": ".CMA1",
+  "label": {
+   "no": "Oljetank, Hydraulikkaggregat, Agg 1",
+   "en": "Oil tank, hydraulic power unit, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1/.HB1",
+  "ebl_code": "414.001.211.010",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1/.HB1/.GPA1",
+  "code": ".GPA1",
+  "label": {
+   "no": "Oljetrykkspumpe 1, Hydraulikkaggregat, Agg 1",
+   "en": "Oil pressure pump 1, hydraulic power unit, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1/.HB1",
+  "ebl_code": "414.001.213.100",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1/.HB1/.GPA2",
+  "code": ".GPA2",
+  "label": {
+   "no": "Oljetrykkspumpe 2, Hydraulikkaggregat, Agg 1",
+   "en": "Oil pressure pump 2, hydraulic power unit, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1/.HB1",
+  "ebl_code": "414.001.213.200",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1/.HB1/.HQB1",
+  "code": ".HQB1",
+  "label": {
+   "no": "Høytrykksfilter, Hydraulikkaggregat, Agg 1",
+   "en": "High-pressure filter, hydraulic power unit, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1/.HB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1/.HB1/.QNB1",
+  "code": ".QNB1",
+  "label": {
+   "no": "Pustefilter, Hydraulikkaggregat, Agg 1",
+   "en": "Breather filter, hydraulic power unit, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1/.HB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1/.HB1/.BPA1",
+  "code": ".BPA1",
+  "label": {
+   "no": "Trykktransmitter, Hydraulikkaggregat, A1",
+   "en": "Pressure transmitter, hydraulic power unit, A1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1/.HB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1/.CPF1",
+  "code": ".CPF1",
+  "label": {
+   "no": "Akkumulator, Turbinregulator, Agg 1",
+   "en": "Accumulator, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1",
+  "comment": "Spørsmål/Mangler:\nRiktig kode? CPF: Thermal energy storing object of pressurized fluids?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1/.LA1",
+  "code": ".LA1",
+  "label": {
+   "no": "Lokalt styresystem/kontrollsystem",
+   "en": "Local control system"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1/.LA1/.UCA1",
+  "code": ".UCA1",
+  "label": {
+   "no": "Pumpestyreskap, Turbinregulator, Agg 1",
+   "en": "Pump control cabinet, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1/.LA1",
+  "comment": "Spørsmål/Mangler:\n- Skal vi ha med nivå skap?\n- Og hva er den riktige koden for skap?\n\nNotat:\nSupplerer trykkolje til regulatoren.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1~2",
+  "code": ".HB1",
+  "label": {
+   "no": "Hydraulikkanlegg, Lavtrykk",
+   "en": "Hydraulic system, low pressure"
+  },
+  "parent": "ROOT/PS/A1/valg",
+  "comment": "Kommentarer:\n- Variasjon i oppsett, og plassering vil dermed variere fra anlegg til anlegg\n- Hvis hydraulikkanlegget server mer enn turbinregulatorsystemet bør den løftes opp: A1.HB1. Hvis den kun server turbin: A1. RB1. HB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1~2/.CMA1",
+  "code": ".CMA1",
+  "label": {
+   "no": "Oljetank, Turbinregulator, Agg 1",
+   "en": "Oil tank, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1~2",
+  "ebl_code": "414.001.211.010",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1~2/.GPA1",
+  "code": ".GPA1",
+  "label": {
+   "no": "Oljetrykkspumpe 1, Turbinregulator, Agg 1",
+   "en": "Oil pressure pump 1, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1~2",
+  "ebl_code": "414.001.213.100",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1~2/.GPA2",
+  "code": ".GPA2",
+  "label": {
+   "no": "Oljetrykkspumpe 2, Turbinregulator, Agg 1",
+   "en": "Oil pressure pump 2, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1~2",
+  "ebl_code": "414.001.213.200",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1~2/.HQB1",
+  "code": ".HQB1",
+  "label": {
+   "no": "Høytrykksfilter, Turbinregulator, Agg 1",
+   "en": "High-pressure filter, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1~2/.HQB2",
+  "code": ".HQB2",
+  "label": {
+   "no": "Pustefilter, Turbinregulator, Agg 1",
+   "en": "Breather filter, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1~2/.BPA1",
+  "code": ".BPA1",
+  "label": {
+   "no": "Trykktransmitter",
+   "en": "Pressure transmitter"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1~2/.CPF1",
+  "code": ".CPF1",
+  "label": {
+   "no": "Akkumulator, Turbinregulator, Agg 1",
+   "en": "Accumulator, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1~2",
+  "comment": "Spørsmål/Mangler:\nRiktig kode? CPF: Thermal energy storing object of pressurized fluids?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1~2/.LA1",
+  "code": ".LA1",
+  "label": {
+   "no": "Lokalt styresystem/kontrollsystem",
+   "en": "Local control system"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/A1/valg/.HB1~2/.LA1/.UCA1",
+  "code": ".UCA1",
+  "label": {
+   "no": "Pumpestyreskap, Turbinregulator, Agg 1",
+   "en": "Pump control cabinet, turbine governor, unit 1"
+  },
+  "parent": "ROOT/PS/A1/valg/.HB1~2/.LA1",
+  "comment": "Spørsmål/Mangler:\n- Skal vi ha med nivå skap?\n- Og hva er den riktige koden for skap?\n\nNotat:\nSupplerer trykkolje til regulatoren.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B1",
+  "code": "B1",
+  "label": {
+   "no": "Høyspenningsystem, Generatorspenning",
+   "en": "High-voltage system, generator voltage"
+  },
+  "parent": "ROOT/PS",
+  "comment": "Notater:\n- 11-420kV",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B1/.JE1",
+  "code": ".JE1",
+  "label": {
+   "no": "Høyspenninssystem, A1",
+   "en": "High-voltage system, A1"
+  },
+  "parent": "ROOT/PS/B1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B1/.JE1/KL1",
+  "code": "KL1",
+  "label": {
+   "no": "Koblingssystem mot hovedtransformator T1",
+   "en": "Switching system towards main transformer T1"
+  },
+  "parent": "ROOT/PS/B1/.JE1",
+  "comment": "Notater:\n- Skiller ut transformatoren som et eget system. Mer naturlig at B1 systemet hører til aggregatet.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B1/.JE1/KL2",
+  "code": "KL2",
+  "label": {
+   "no": "Koblingssystem mot stasjonstransformator ST1",
+   "en": "Switching system towards station transformer ST1"
+  },
+  "parent": "ROOT/PS/B1/.JE1",
+  "comment": "Notater:\n- Skiller ut transformatoren som et eget system. Mer naturlig at B1 systemet hører til aggregatet.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B1/.JEX",
+  "code": ".JEX",
+  "label": {
+   "no": "Høyspenninssystem, AX",
+   "en": "High-voltage system, AX"
+  },
+  "parent": "ROOT/PS/B1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B1/.JE2",
+  "code": ".JE2",
+  "label": {
+   "no": "Samleskinnefelt",
+   "en": "Busbar bay"
+  },
+  "parent": "ROOT/PS/B1",
+  "comment": "Notater:\n- Til aggregat 1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B1/.JE2/.WBA1",
+  "code": ".WBA1",
+  "label": {
+   "no": "Samleskinne",
+   "en": "Busbar"
+  },
+  "parent": "ROOT/PS/B1/.JE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2",
+  "code": "B2",
+  "label": {
+   "no": "Høyspenningsystem, Nettspenning",
+   "en": "High-voltage system, grid voltage"
+  },
+  "parent": "ROOT/PS",
+  "comment": "Notater:\n- 11-420kV",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1",
+  "code": ".JE1",
+  "label": {
+   "no": "Høyspenninssystem, T1, 300 kV",
+   "en": "High-voltage system, T1, 300 kV"
+  },
+  "parent": "ROOT/PS/B2",
+  "comment": "Notater:\n- Til aggregat 1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.KL1",
+  "code": ".KL1",
+  "label": {
+   "no": "Koblingsanlegg, 300kV",
+   "en": "Switchgear, 300 kV"
+  },
+  "parent": "ROOT/PS/B2/.JE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.KL1/n",
+  "code": "",
+  "label": {
+   "no": "Spenningstransformator, HE3, 300kV",
+   "en": "Voltage transformer, HE3, 300 kV"
+  },
+  "parent": "ROOT/PS/B2/.JE1/.KL1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.KL1/n~2",
+  "code": "",
+  "label": {
+   "no": "Strømtransformator, HE3, 300kV",
+   "en": "Current transformer, HE3, 300 kV"
+  },
+  "parent": "ROOT/PS/B2/.JE1/.KL1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.KL1/n~3",
+  "code": "",
+  "label": {
+   "no": "Jordbryter, 300HE3J",
+   "en": "Earthing switch, 300HE3J"
+  },
+  "parent": "ROOT/PS/B2/.JE1/.KL1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.KL1/n~4",
+  "code": "",
+  "label": {
+   "no": "Skillebryter, 300HE3K",
+   "en": "Disconnector, 300HE3K"
+  },
+  "parent": "ROOT/PS/B2/.JE1/.KL1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.KL1/n~5",
+  "code": "",
+  "label": {
+   "no": "Skillebryter, 300HE3A",
+   "en": "Disconnector, 300HE3A"
+  },
+  "parent": "ROOT/PS/B2/.JE1/.KL1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.KL1/n~6",
+  "code": "",
+  "label": {
+   "no": "Skillebryter, 300HE3H",
+   "en": "Disconnector, 300HE3H"
+  },
+  "parent": "ROOT/PS/B2/.JE1/.KL1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.KL1/n~7",
+  "code": "",
+  "label": {
+   "no": "Effektbryter, 300HE3E",
+   "en": "Circuit breaker, 300HE3E"
+  },
+  "parent": "ROOT/PS/B2/.JE1/.KL1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.WBB1",
+  "code": ".WBB1",
+  "label": {
+   "no": "Kabel",
+   "en": "Cable"
+  },
+  "parent": "ROOT/PS/B2/.JE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.WBB1/WBB1",
+  "code": "WBB1",
+  "label": {
+   "no": "Kabel",
+   "en": "Cable"
+  },
+  "parent": "ROOT/PS/B2/.JE1/.WBB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.WBB1/n",
+  "code": "",
+  "label": {
+   "no": "Endeavslutning, kabel",
+   "en": "Cable termination"
+  },
+  "parent": "ROOT/PS/B2/.JE1/.WBB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE1/.WBB1/n~2",
+  "code": "",
+  "label": {
+   "no": "Trykktank (Hjelpeanlegg)",
+   "en": "Pressure tank (auxiliary system)"
+  },
+  "parent": "ROOT/PS/B2/.JE1/.WBB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE2",
+  "code": ".JE2",
+  "label": {
+   "no": "Høyspenninssystem, T2, 300 kV",
+   "en": "High-voltage system, T2, 300 kV"
+  },
+  "parent": "ROOT/PS/B2",
+  "comment": "Notater:\n- Til aggregat 2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/B2/.JE3",
+  "code": ".JE3",
+  "label": {
+   "no": "Samleskinne, 300 kV",
+   "en": "Busbar, 300 kV"
+  },
+  "parent": "ROOT/PS/B2",
+  "comment": "Notater:\n- Til aggregat 1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1",
+  "code": "C1",
+  "label": {
+   "no": "Vannveisystem, magasin",
+   "en": "Waterway system, reservoir"
+  },
+  "parent": "ROOT/PS",
+  "comment": "Notater/Kommentarer:\nVannvei fra inntaksdam) og til ventilkammer.\n\n- Hvis man har to tunneller blir det to C-systemer.\n\n...",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntakssystem",
+   "en": "Intake system"
+  },
+  "parent": "ROOT/PS/C1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA1/.JC1",
+  "code": ".JC1",
+  "label": {
+   "no": "Grinsrensker",
+   "en": "Trash rack cleaner"
+  },
+  "parent": "ROOT/PS/C1/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA1/.HQB1",
+  "code": ".HQB1",
+  "label": {
+   "no": "Varegrind",
+   "en": "Trash rack"
+  },
+  "parent": "ROOT/PS/C1/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA1/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntakslukesystem 1 (A1)",
+   "en": "Intake gate system 1 (A1)"
+  },
+  "parent": "ROOT/PS/C1/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA1/.KA1/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Inntakstunnel",
+   "en": "Intake tunnel"
+  },
+  "parent": "ROOT/PS/C1/.KA1/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA1/.KA1/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntaksluke",
+   "en": "Intake gate"
+  },
+  "parent": "ROOT/PS/C1/.KA1/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA1/.KA2",
+  "code": ".KA2",
+  "label": {
+   "no": "Inntakslukesystem (A2)",
+   "en": "Intake gate system (A2)"
+  },
+  "parent": "ROOT/PS/C1/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA1/.KA2/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Inntakstunnel",
+   "en": "Intake tunnel"
+  },
+  "parent": "ROOT/PS/C1/.KA1/.KA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA1/.KA2/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntaksluke",
+   "en": "Intake gate"
+  },
+  "parent": "ROOT/PS/C1/.KA1/.KA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA1/._QMA1",
+  "code": ". QMA1",
+  "label": {
+   "no": "Felles revisjonsluke",
+   "en": "Common maintenance gate"
+  },
+  "parent": "ROOT/PS/C1/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.KA2",
+  "code": ".KA2",
+  "label": {
+   "no": "Rørbruddsventil",
+   "en": "Pipe burst valve"
+  },
+  "parent": "ROOT/PS/C1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.JB1",
+  "code": ".JB1",
+  "label": {
+   "no": "Tilløpstunnel",
+   "en": "Headrace tunnel"
+  },
+  "parent": "ROOT/PS/C1",
+  "comment": "Notater:\nFunksjon: Lede vann fra sjakt til hovedventil\nGrensesnitt: Delen av tilløpsrøret som er fra veggen i kraftstasjonen til hovedventilen.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/JB2",
+  "code": "JB2",
+  "label": {
+   "no": "Trykksjakt 1 (rør til A1)",
+   "en": "Pressure shaft 1 (pipe to A1)"
+  },
+  "parent": "ROOT/PS/C1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/JB3",
+  "code": "JB3",
+  "label": {
+   "no": "Trykksjakt 2 (rør til A2)",
+   "en": "Pressure shaft 2 (pipe to A2)"
+  },
+  "parent": "ROOT/PS/C1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.JB4",
+  "code": ".JB4",
+  "label": {
+   "no": "Omløpssystem",
+   "en": "Bypass system"
+  },
+  "parent": "ROOT/PS/C1",
+  "comment": "Notater:\n\nInkludert luke",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/.JB5",
+  "code": ".JB5",
+  "label": {
+   "no": "Tapperørsystem",
+   "en": "Drain pipe system"
+  },
+  "parent": "ROOT/PS/C1",
+  "comment": "Notater:\n\nInkludert luke",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/HB1",
+  "code": "HB1",
+  "label": {
+   "no": "Bekkeinntak",
+   "en": "Creek intake"
+  },
+  "parent": "ROOT/PS/C1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/PF1",
+  "code": "PF1",
+  "label": {
+   "no": "Svingekammer",
+   "en": "Surge chamber"
+  },
+  "parent": "ROOT/PS/C1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1/PF1/WPB1",
+  "code": "WPB1",
+  "label": {
+   "no": "Overløpssjakt/tunnel",
+   "en": "Spillway shaft/tunnel"
+  },
+  "parent": "ROOT/PS/C1/PF1",
+  "comment": "Betongdel\n\nTverrslag: en tunnel som går inn i hovedtunnel.\nPropp: Det som tetter igjen tverrslaget fra hovedtunnelen,",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2",
+  "code": "C1",
+  "label": {
+   "no": "Vannveisystem, elvekraft",
+   "en": "Waterway system, run-of-river"
+  },
+  "parent": "ROOT/PS",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.JC1",
+  "code": ".JC1",
+  "label": {
+   "no": "Grindrensker",
+   "en": "Trash rack cleaner"
+  },
+  "parent": "ROOT/PS/C1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.HB1",
+  "code": ".HB1",
+  "label": {
+   "no": "Hydraulikkaggregat, felles",
+   "en": "Hydraulic power unit, common"
+  },
+  "parent": "ROOT/PS/C1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.LA1",
+  "code": ".LA1",
+  "label": {
+   "no": "Lukestyringssystem, felles",
+   "en": "Gate control system, common"
+  },
+  "parent": "ROOT/PS/C1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntakssystem, A1",
+   "en": "Intake system, A1"
+  },
+  "parent": "ROOT/PS/C1~2",
+  "comment": "Notater:\nFunksjon: Lede vann fra sjakt til hovedventil\nGrensesnitt: Delen av tilløpsrøret som er fra veggen i kraftstasjonen til hovedventilen.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/.HQB1",
+  "code": ".HQB1",
+  "label": {
+   "no": "Varegrind",
+   "en": "Trash rack"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntakslukesystem 1 (A1)",
+   "en": "Intake gate system 1 (A1)"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/.KA1/.WPB1",
+  "code": ".WPB1",
+  "label": {
+   "no": "Inntakstunnel",
+   "en": "Intake tunnel"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/.KA1/.QPA1",
+  "code": ".QPA1",
+  "label": {
+   "no": "Inntaksluke",
+   "en": "Intake gate"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/.KA1/.JC1",
+  "code": ".JC1",
+  "label": {
+   "no": "Opptrekksystem",
+   "en": "Hoisting system"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/.QMA1",
+  "code": ".QMA1",
+  "label": {
+   "no": "Felles revisjonsluke",
+   "en": "Common maintenance gate"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/.HB1",
+  "code": ".HB1",
+  "label": {
+   "no": "Hydraulikkaggregat, per inntak",
+   "en": "Hydraulic power unit, per intake"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/valg",
+  "code": "",
+  "label": {
+   "no": "trykkrør",
+   "en": "Penstock"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1",
+  "kind": "choice",
+  "comment": "Velger riktig objekt basert på kompleksiteten.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/valg/.JB1",
+  "code": ".JB1",
+  "label": {
+   "no": "Tilløpsrørsystem/trykkrørsystem",
+   "en": "Penstock system"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1/valg",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/valg/.JB1/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Trykkrør, del 1",
+   "en": "Penstock, part 1"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1/valg/.JB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/valg/.JB1/.WPA2",
+  "code": ".WPA2",
+  "label": {
+   "no": "Trykkrør. del 2",
+   "en": "Penstock, part 2"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1/valg/.JB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1/valg/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Trykkrør",
+   "en": "Penstock"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1/valg",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntakssystem, A2",
+   "en": "Intake system, A2"
+  },
+  "parent": "ROOT/PS/C1~2",
+  "comment": "Notater:\nFunksjon: Lede vann fra sjakt til hovedventil\nGrensesnitt: Delen av tilløpsrøret som er fra veggen i kraftstasjonen til hovedventilen.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2/.HQB1",
+  "code": ".HQB1",
+  "label": {
+   "no": "Varegrind",
+   "en": "Trash rack"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntakslukesystem 1 (A1)",
+   "en": "Intake gate system 1 (A1)"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2/.KA1/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Inntakstunnel",
+   "en": "Intake tunnel"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~2/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2/.KA1/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntaksluke",
+   "en": "Intake gate"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~2/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2/.KA2",
+  "code": ".KA2",
+  "label": {
+   "no": "Inntakslukesystem (A2)",
+   "en": "Intake gate system (A2)"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2/.KA2/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Inntakstunnel",
+   "en": "Intake tunnel"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~2/.KA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2/.KA2/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntaksluke",
+   "en": "Intake gate"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~2/.KA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2/.",
+  "code": ".",
+  "label": {
+   "no": "Felles revisjonsluke",
+   "en": "Common maintenance gate"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2/JB1",
+  "code": "JB1",
+  "label": {
+   "no": "Trykksjakt 1 (rør til A1)",
+   "en": "Pressure shaft 1 (pipe to A1)"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~2/JB1~2",
+  "code": "JB1",
+  "label": {
+   "no": "Trykksjakt 2 (rør til A2)",
+   "en": "Pressure shaft 2 (pipe to A2)"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntakssystem, AX",
+   "en": "Intake system, AX"
+  },
+  "parent": "ROOT/PS/C1~2",
+  "comment": "Notater:\nFunksjon: Lede vann fra sjakt til hovedventil\nGrensesnitt: Delen av tilløpsrøret som er fra veggen i kraftstasjonen til hovedventilen.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3/.HQB1",
+  "code": ".HQB1",
+  "label": {
+   "no": "Varegrind",
+   "en": "Trash rack"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~3",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntakslukesystem 1 (A1)",
+   "en": "Intake gate system 1 (A1)"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~3",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3/.KA1/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Inntakstunnel",
+   "en": "Intake tunnel"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~3/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3/.KA1/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntaksluke",
+   "en": "Intake gate"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~3/.KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3/.KA2",
+  "code": ".KA2",
+  "label": {
+   "no": "Inntakslukesystem (A2)",
+   "en": "Intake gate system (A2)"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~3",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3/.KA2/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Inntakstunnel",
+   "en": "Intake tunnel"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~3/.KA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3/.KA2/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Inntaksluke",
+   "en": "Intake gate"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~3/.KA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3/.",
+  "code": ".",
+  "label": {
+   "no": "Felles revisjonsluke",
+   "en": "Common maintenance gate"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~3",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3/JB1",
+  "code": "JB1",
+  "label": {
+   "no": "Trykksjakt 1 (rør til A1)",
+   "en": "Pressure shaft 1 (pipe to A1)"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~3",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/C1~2/.KA1~3/JB1~2",
+  "code": "JB1",
+  "label": {
+   "no": "Trykksjakt 2 (rør til A2)",
+   "en": "Pressure shaft 2 (pipe to A2)"
+  },
+  "parent": "ROOT/PS/C1~2/.KA1~3",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1",
+  "code": "K1",
+  "label": {
+   "no": "Transformatorsystem",
+   "en": "Transformer system"
+  },
+  "parent": "ROOT/PS",
+  "comment": "Grensesnitt:",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1",
+  "code": ".KF1",
+  "label": {
+   "no": "Transformatorsystem",
+   "en": "Transformer system"
+  },
+  "parent": "ROOT/PS/K1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/KF1",
+  "code": "KF1",
+  "label": {
+   "no": "Fase 1/A",
+   "en": "Phase 1/A"
+  },
+  "parent": "ROOT/PS/K1/.KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/KF2",
+  "code": "KF2",
+  "label": {
+   "no": "Fase 2",
+   "en": "Phase 2"
+  },
+  "parent": "ROOT/PS/K1/.KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/KF3",
+  "code": "KF3",
+  "label": {
+   "no": "Fase 3",
+   "en": "Phase 3"
+  },
+  "parent": "ROOT/PS/K1/.KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/n",
+  "code": "",
+  "label": {
+   "no": "Oljelkjøling",
+   "en": "Oil cooling"
+  },
+  "parent": "ROOT/PS/K1/.KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1",
+  "code": ".KF1",
+  "label": {
+   "no": "Transformator, T1",
+   "en": "Transformer, T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1",
+  "comment": "Spørsmål/Mangler:\n- Dette bør være et teknisk system og ikke en komponent? Bør endres til system og ikke komponent. Skal vel ikke ha rekkefølgen: komponent - system.\n- Navngivning må avklares.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.JB1",
+  "code": ".JB1",
+  "label": {
+   "no": "Oljesystem",
+   "en": "Oil system"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.JB1/.RAD1",
+  "code": ".RAD1",
+  "label": {
+   "no": "Olje",
+   "en": "Oil"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.JB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.JB1/n",
+  "code": "",
+  "label": {
+   "no": "Konservatortank",
+   "en": "Conservator tank"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.JB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.JB1/n/.QNB1",
+  "code": ".QNB1",
+  "label": {
+   "no": "Pusteren (silica gel)/Fuktighetsfilter",
+   "en": "Breather (silica gel)/moisture filter"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.JB1/n",
+  "comment": "Instrument som er mellom konservatortank og hvor luften kommer inn. Kommer inn i silica gel for å absorbere vann.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.JB1/n/.BLA1",
+  "code": ".BLA1",
+  "label": {
+   "no": "Oljenivåmåler",
+   "en": "Oil level gauge"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.JB1/n",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.JB1/n/n",
+  "code": "",
+  "label": {
+   "no": "Gummisekk",
+   "en": "Rubber bag"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.JB1/n",
+  "comment": "Skille mellom olje og luft (omgivelse)",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.JB1/n/.CMA1",
+  "code": ".CMA1",
+  "label": {
+   "no": "Tank, konservator",
+   "en": "Tank, conservator"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.JB1/n",
+  "comment": "Skille mellom olje og luft (omgivelse)",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.JB1/n/n~2",
+  "code": "",
+  "label": {
+   "no": "Rør",
+   "en": "Pipe"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.JB1/n",
+  "comment": "Skille mellom olje og luft (omgivelse)",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "code": ".HE1",
+  "label": {
+   "no": "Kjølesystem 1, Transformator T1",
+   "en": "Cooling system 1, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1",
+  "comment": "Man kan ha:\n\noljefylte kabler + oljetrykksanlegg (fjellanlegg og ut - Usta, Nes) Ofte 1 kabel (enleder) i reserve.\nPex-kabler (tørrisolerte)\n1 kabel per fase.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/EGC1",
+  "code": "EGC1",
+  "label": {
+   "no": "Kjøler, Kjølesystem 1, Transformator T1",
+   "en": "Cooler, cooling system 1, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/GPC1",
+  "code": "GPC1",
+  "label": {
+   "no": "Oljepumpe, Kjølesystem 1, Transformator T1",
+   "en": "Oil pump, cooling system 1, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/BTA1",
+  "code": "BTA1",
+  "label": {
+   "no": "Temperaturtransmitter, Vann inn, Kjølesystem 1, Transformator T1",
+   "en": "Temperature transmitter, water in, cooling system 1, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/BTA2",
+  "code": "BTA2",
+  "label": {
+   "no": "Temperaturtransmitter, Vann ut, Kjølesystem 1, Transformator T1",
+   "en": "Temperature transmitter, water out, cooling system 1, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/BTA3",
+  "code": "BTA3",
+  "label": {
+   "no": "Temperaturtransmitter, Olje inn, Kjølesystem 1, Transformator T1",
+   "en": "Temperature transmitter, oil in, cooling system 1, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/BTA4",
+  "code": "BTA4",
+  "label": {
+   "no": "Temperaturtransmitter, Olje ut, Kjølesystem 1, Transformator T1",
+   "en": "Temperature transmitter, oil out, cooling system 1, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/n",
+  "code": "",
+  "label": {
+   "no": "Vannstrømningsvakt",
+   "en": "Water flow monitor"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/n~2",
+  "code": "",
+  "label": {
+   "no": "Oljestrømningsvakt",
+   "en": "Oil flow monitor"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/n~3",
+  "code": "",
+  "label": {
+   "no": "Manuell ventil, Vann inn",
+   "en": "Manual valve, water in"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/n~4",
+  "code": "",
+  "label": {
+   "no": "Manuell ventil, Vann ut",
+   "en": "Manual valve, water out"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/n~5",
+  "code": "",
+  "label": {
+   "no": "Motorstyrt ventil, Vann inn",
+   "en": "Motor-operated valve, water in"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE1/n~6",
+  "code": "",
+  "label": {
+   "no": "Lekkasjevakt",
+   "en": "Leakage monitor"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "code": ".HE2",
+  "label": {
+   "no": "Kjølesystem 2",
+   "en": "Cooling system 2"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2/EGC1",
+  "code": "EGC1",
+  "label": {
+   "no": "Kjøler, Kjølesystem 2, Transformator T1",
+   "en": "Cooler, cooling system 2, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2/GPC1",
+  "code": "GPC1",
+  "label": {
+   "no": "Oljepumpe, Kjølesystem 2, Transformator T1",
+   "en": "Oil pump, cooling system 2, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2/BTA1",
+  "code": "BTA1",
+  "label": {
+   "no": "Temperaturtransmitter, Vann inn, Kjølesystem 2, Transformator T1",
+   "en": "Temperature transmitter, water in, cooling system 2, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2/BTA2",
+  "code": "BTA2",
+  "label": {
+   "no": "Temperaturtransmitter, Vann ut, Kjølesystem 2, Transformator T1",
+   "en": "Temperature transmitter, water out, cooling system 2, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2/BTA3",
+  "code": "BTA3",
+  "label": {
+   "no": "Temperaturtransmitter, Olje inn, Kjølesystem 2, Transformator T1",
+   "en": "Temperature transmitter, oil in, cooling system 2, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2/BTA4",
+  "code": "BTA4",
+  "label": {
+   "no": "Temperaturtransmitter, Olje ut, Kjølesystem 2, Transformator T1",
+   "en": "Temperature transmitter, oil out, cooling system 2, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2/n",
+  "code": "",
+  "label": {
+   "no": "Manuell ventil, Vann inn",
+   "en": "Manual valve, water in"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2/n~2",
+  "code": "",
+  "label": {
+   "no": "Manuell ventil, Vann ut",
+   "en": "Manual valve, water out"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2/n~3",
+  "code": "",
+  "label": {
+   "no": "Motorstyrt ventil, Vann inn",
+   "en": "Motor-operated valve, water in"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/.HE2/n~4",
+  "code": "",
+  "label": {
+   "no": "Lekkasjevakt",
+   "en": "Leakage monitor"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/.HE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/n",
+  "code": "",
+  "label": {
+   "no": "Motorstyrt ventil, mot PI regulator. Felles Vann ut",
+   "en": "Motor-operated valve, to PI controller. Common water out"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/n~2",
+  "code": "",
+  "label": {
+   "no": "Gjennomføring/Viklingssystem",
+   "en": "Bushing/winding system"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/n~2/WBD1",
+  "code": "WBD1",
+  "label": {
+   "no": "Gjennomføring, høyspent",
+   "en": "Bushing, high voltage"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/n~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/n~2/WBD2",
+  "code": "WBD2",
+  "label": {
+   "no": "Gjennomføring, lavspent",
+   "en": "Bushing, low voltage"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/n~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/n~2/WBD3",
+  "code": "WBD3",
+  "label": {
+   "no": "Gjennomføring, Nullpunkt (Høyspent)",
+   "en": "Bushing, neutral point (high voltage)"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/n~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/TAA1",
+  "code": "TAA1",
+  "label": {
+   "no": "Transformatortank/hus",
+   "en": "Transformer tank/housing"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1",
+  "comment": "Man kan ha:\n\noljefylte kabler + oljetrykksanlegg (fjellanlegg og ut - Usta, Nes) Ofte 1 kabel (enleder) i reserve.\nPex-kabler (tørrisolerte)\n1 kabel per fase.\n\nLucie har ansvar for kabler eller skinneføringer frem til første bryter, uavhengig av type bryter. ANders har ansvar fra bryteranleggene og ut på nett.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/TAA1/n",
+  "code": "",
+  "label": {
+   "no": "Sensor, oljetemperatur",
+   "en": "Sensor, oil temperature"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/TAA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/TAA1/n~2",
+  "code": "",
+  "label": {
+   "no": "Sensor, viklingstemperatur",
+   "en": "Sensor, winding temperature"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/TAA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/TAA1/n~3",
+  "code": "",
+  "label": {
+   "no": "Fiberoptisk Hot spot",
+   "en": "Fibre optic hot spot"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/TAA1",
+  "comment": "Inkluderer: Temperaturviser + fiberoptisk wire\nViser:  Varmeste punktet gjennom viklingene\n\nLigger en sensor på vikling",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/TAA1/n~4",
+  "code": "",
+  "label": {
+   "no": "Gassvakt",
+   "en": "Gas monitor"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/TAA1",
+  "comment": "Inkluderer: Temperaturviser + fiberoptisk wire\nViser:  Varmeste punktet gjennom viklingene\n\nLigger en sensor på vikling",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/TAA1/n~5",
+  "code": "",
+  "label": {
+   "no": "Trykkavlastningsventil",
+   "en": "Pressure relief valve"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/TAA1",
+  "comment": "Slippe ut overtrykk i trafo ved feil",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/TAA1/n~6",
+  "code": "",
+  "label": {
+   "no": "DGA Analysator",
+   "en": "DGA analyser"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/TAA1",
+  "comment": "påmontert utstyr som måler kontinuerlig gass i olje.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/TAA1/n~7",
+  "code": "",
+  "label": {
+   "no": "Toppoljetemperatur til PI regulatoren (temperaturregulator)",
+   "en": "Top oil temperature to PI controller (temperature controller)"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/TAA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/TAA1/n~8",
+  "code": "",
+  "label": {
+   "no": "Transformatortank",
+   "en": "Transformer tank"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/TAA1",
+  "comment": "Pakninger\nStålkonstruksjon\nVentiler\nLokk\nBolter\njordingspunker",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/n~3",
+  "code": "",
+  "label": {
+   "no": "Trinnkobler",
+   "en": "Tap changer"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1",
+  "comment": "Man kan ha:\n\noljefylte kabler + oljetrykksanlegg (fjellanlegg og ut - Usta, Nes) Ofte 1 kabel (enleder) i reserve.\nPex-kabler (tørrisolerte)\n1 kabel per fase.\n\nLucie har ansvar for kabler eller skinneføringer frem til første bryter, uavhengig av type bryter. ANders har ansvar fra bryteranleggene og ut på nett.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/n~4",
+  "code": "",
+  "label": {
+   "no": "Kabelboks 1, Fase X",
+   "en": "Cable box 1, phase X"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1",
+  "ebl_code": "461.001.410",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/n~5",
+  "code": "",
+  "label": {
+   "no": "Kabelboks X, Fase X",
+   "en": "Cable box X, phase X"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1",
+  "ebl_code": "461.001.4X0",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1",
+  "code": "KF1",
+  "label": {
+   "no": "Vikling primær [NNkV]",
+   "en": "Winding, primary [NN kV]"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1",
+  "comment": "Avklare forslag: Lage viklingsystem på primær og sekundær side hvor spenning defineres.\nSe vedlagt forslag. Det må dupliseres for hver fase og trafoside",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1",
+  "code": "KF1",
+  "label": {
+   "no": "Fase 1",
+   "en": "Phase 1"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/WBD1",
+  "code": "WBD1",
+  "label": {
+   "no": "Vikling",
+   "en": "Winding"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n",
+  "code": "",
+  "label": {
+   "no": "Varianter: Tilkobling/gjennomføring",
+   "en": "Variants: connection/bushing"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n/n",
+  "code": "",
+  "label": {
+   "no": "Kabel/skinne",
+   "en": "Cable/busbar"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n/n/WBD1",
+  "code": "WBD1",
+  "label": {
+   "no": "Gjennomføring",
+   "en": "Bushing"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n/n",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n/n/n",
+  "code": "",
+  "label": {
+   "no": "Tilkobling (kabel eller skinne)",
+   "en": "Connection (cable or busbar)"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n/n",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n/n~2",
+  "code": "",
+  "label": {
+   "no": "kabelboks",
+   "en": "Cable box"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n/n~2/n",
+  "code": "",
+  "label": {
+   "no": "Kabelboks X, Fase X",
+   "en": "Cable box X, phase X"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1/KF1/n/n~2",
+  "ebl_code": "461.001.4X0",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF2",
+  "code": "KF2",
+  "label": {
+   "no": "Fase 2",
+   "en": "Phase 2"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF3",
+  "code": "KF3",
+  "label": {
+   "no": "Fase 3",
+   "en": "Phase 3"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.KF1/KF1/KF4",
+  "code": "KF4",
+  "label": {
+   "no": "Nullpunkt",
+   "en": "Neutral point"
+  },
+  "parent": "ROOT/PS/K1/.KF1/.KF1/KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.LD1",
+  "code": ".LD1",
+  "label": {
+   "no": "Kontrollsystem, Transformator T1",
+   "en": "Control system, transformer T1"
+  },
+  "parent": "ROOT/PS/K1/.KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.KF1/.PG1",
+  "code": ".PG1",
+  "label": {
+   "no": "Vernsystem",
+   "en": "Protection system"
+  },
+  "parent": "ROOT/PS/K1/.KF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/n",
+  "code": "",
+  "label": {
+   "no": "Oljegrube",
+   "en": "Oil pit"
+  },
+  "parent": "ROOT/PS/K1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.JF1",
+  "code": ".JF1",
+  "label": {
+   "no": "Strømforbindelse",
+   "en": "Current connection"
+  },
+  "parent": "ROOT/PS/K1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.JF1/KF1",
+  "code": "KF1",
+  "label": {
+   "no": "Fase 1/A",
+   "en": "Phase 1/A"
+  },
+  "parent": "ROOT/PS/K1/.JF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.JF1/KF2",
+  "code": "KF2",
+  "label": {
+   "no": "Fase 2",
+   "en": "Phase 2"
+  },
+  "parent": "ROOT/PS/K1/.JF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.JF1/KF3",
+  "code": "KF3",
+  "label": {
+   "no": "Fase 3",
+   "en": "Phase 3"
+  },
+  "parent": "ROOT/PS/K1/.JF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/K1/.JF1/n",
+  "code": "",
+  "label": {
+   "no": "Oljelkjøling",
+   "en": "Oil cooling"
+  },
+  "parent": "ROOT/PS/K1/.JF1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1",
+  "code": "D1",
+  "label": {
+   "no": "Hjelpesystem",
+   "en": "Auxiliary system"
+  },
+  "parent": "ROOT/PS",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1/n",
+  "code": "",
+  "label": {
+   "no": "Kjølesystem, felles",
+   "en": "Cooling system, common"
+  },
+  "parent": "ROOT/PS/D1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1/n~2",
+  "code": "",
+  "label": {
+   "no": "Lensesystem, felles",
+   "en": "Dewatering system, common"
+  },
+  "parent": "ROOT/PS/D1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1/n~3",
+  "code": "",
+  "label": {
+   "no": "Trykkluftsystem",
+   "en": "Compressed air system"
+  },
+  "parent": "ROOT/PS/D1",
+  "comment": "Avklaring 27.02.26: Hvor relevant er det å ha trykkluftsystem som D-system?\nForslag:\nArbeidsluft foreslås å legges under bygget det står montert i/supporterer.\nTrykkluft til konkrete funksjoner som \"bryter\" eller \"turbinregulator\" hører til det hovedsystemet det støtter (på lik linke med hyd. aggregat)\nFelles trykkluft som går på tvers av hovedsystemer kan legges som D-system",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1/D5",
+  "code": "D5",
+  "label": {
+   "no": "Jordingssystem, felles",
+   "en": "Earthing system, common"
+  },
+  "parent": "ROOT/PS/D1",
+  "comment": "Notat:\n- Er dette riktig plassering?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1/D5/n",
+  "code": "",
+  "label": {
+   "no": "Spenningstrafo",
+   "en": "Voltage transformer"
+  },
+  "parent": "ROOT/PS/D1/D5",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1/D5/n~2",
+  "code": "",
+  "label": {
+   "no": "Strømtrafo",
+   "en": "Current transformer"
+  },
+  "parent": "ROOT/PS/D1/D5",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1/D5/.PC1",
+  "code": ".PC1",
+  "label": {
+   "no": "Jordingsanlegg",
+   "en": "Earthing system"
+  },
+  "parent": "ROOT/PS/D1/D5",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1/D5/.PC1/n",
+  "code": "",
+  "label": {
+   "no": "Jordingselektroder",
+   "en": "Earth electrodes"
+  },
+  "parent": "ROOT/PS/D1/D5/.PC1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2",
+  "code": "D1",
+  "label": {
+   "no": "Stasjonsforsyning",
+   "en": "Station supply"
+  },
+  "parent": "ROOT/PS",
+  "comment": "Hjelpekraftsystem - et interne elektriske systemet som sørger for strøm til alle nødvendige komponenter og systemer i kraftstasjonen\n\nD: lavere spenningsnivå",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.HD1",
+  "code": ".HD1",
+  "label": {
+   "no": "Likestrømssystem (DC)",
+   "en": "DC system"
+  },
+  "parent": "ROOT/PS/D1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.HD2",
+  "code": ".HD2",
+  "label": {
+   "no": "Nødstrømsaggregat",
+   "en": "Emergency power generator"
+  },
+  "parent": "ROOT/PS/D1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.JE1",
+  "code": ".JE1",
+  "label": {
+   "no": "Hovedfordelingssystem A/Prioritert (AC)",
+   "en": "Main distribution system A/priority (AC)"
+  },
+  "parent": "ROOT/PS/D1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.JE1/.KL1",
+  "code": ".KL1",
+  "label": {
+   "no": "Felt 1",
+   "en": "Bay 1"
+  },
+  "parent": "ROOT/PS/D1~2/.JE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.JE1/.KL1/n",
+  "code": "",
+  "label": {
+   "no": "Bryter",
+   "en": "Switch"
+  },
+  "parent": "ROOT/PS/D1~2/.JE1/.KL1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.JE1/.KL2",
+  "code": ".KL2",
+  "label": {
+   "no": "Felt 2",
+   "en": "Bay 2"
+  },
+  "parent": "ROOT/PS/D1~2/.JE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.JE1/.WDA",
+  "code": ".WDA",
+  "label": {
+   "no": "Samleskinne",
+   "en": "Busbar"
+  },
+  "parent": "ROOT/PS/D1~2/.JE1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.JE2",
+  "code": ".JE2",
+  "label": {
+   "no": "Hovedfordelingssystem B/Uprioritert",
+   "en": "Main distribution system B/non-priority"
+  },
+  "parent": "ROOT/PS/D1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.JE2/.KL1",
+  "code": ".KL1",
+  "label": {
+   "no": "Felt 1",
+   "en": "Bay 1"
+  },
+  "parent": "ROOT/PS/D1~2/.JE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.JE2/.KL1/n",
+  "code": "",
+  "label": {
+   "no": "Bryter",
+   "en": "Switch"
+  },
+  "parent": "ROOT/PS/D1~2/.JE2/.KL1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.JE2/.KL2",
+  "code": ".KL2",
+  "label": {
+   "no": "Felt 2",
+   "en": "Bay 2"
+  },
+  "parent": "ROOT/PS/D1~2/.JE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.JE2/.WDA",
+  "code": ".WDA",
+  "label": {
+   "no": "Samleskinne",
+   "en": "Busbar"
+  },
+  "parent": "ROOT/PS/D1~2/.JE2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/D1~2/.KF1",
+  "code": ".KF1",
+  "label": {
+   "no": "Stasjonstransformator",
+   "en": "Station transformer"
+  },
+  "parent": "ROOT/PS/D1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1",
+  "code": "E1",
+  "label": {
+   "no": "Reguleringsystem 1 (Inntaket)",
+   "en": "Regulation system 1 (intake)"
+  },
+  "parent": "ROOT/PS",
+  "comment": "Notater:\n\nForslag til å endre navn til vassdragssystem?",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/BA1",
+  "code": "BA1",
+  "label": {
+   "no": "Damsystem",
+   "en": "Dam system"
+  },
+  "parent": "ROOT/PS/E1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/BA1/ULM1",
+  "code": "ULM1",
+  "label": {
+   "no": "Dam",
+   "en": "Dam"
+  },
+  "parent": "ROOT/PS/E1/BA1",
+  "comment": "Notater:\n- Må være et teknisk system hvis den inkluderer flere tekniske systemer. Hvis det er noe som kan være inkludert.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/BA1/KA1",
+  "code": "KA1",
+  "label": {
+   "no": "Damlukesystem",
+   "en": "Dam gate system"
+  },
+  "parent": "ROOT/PS/E1/BA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/BA1/KA1/KE1",
+  "code": "KE1",
+  "label": {
+   "no": "Hydraulikkaggregat",
+   "en": "Hydraulic power unit"
+  },
+  "parent": "ROOT/PS/E1/BA1/KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/BA1/KA1/QPA1",
+  "code": "QPA1",
+  "label": {
+   "no": "Damluke 1",
+   "en": "Dam gate 1"
+  },
+  "parent": "ROOT/PS/E1/BA1/KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/BA1/KA1/QPA2",
+  "code": "QPA2",
+  "label": {
+   "no": "Damluke 2",
+   "en": "Dam gate 2"
+  },
+  "parent": "ROOT/PS/E1/BA1/KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/BA1/KA1/GMB1",
+  "code": "GMB1",
+  "label": {
+   "no": "Opptrekk",
+   "en": "Hoist"
+  },
+  "parent": "ROOT/PS/E1/BA1/KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/BA1/KA1/QNA1",
+  "code": "QNA1",
+  "label": {
+   "no": "Tappeventil",
+   "en": "Drain valve"
+  },
+  "parent": "ROOT/PS/E1/BA1/KA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/KA2",
+  "code": "KA2",
+  "label": {
+   "no": "Flomlukesystem",
+   "en": "Flood gate system"
+  },
+  "parent": "ROOT/PS/E1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/QB1",
+  "code": "QB1",
+  "label": {
+   "no": "Magasin",
+   "en": "Reservoir"
+  },
+  "parent": "ROOT/PS/E1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/JB1",
+  "code": "JB1",
+  "label": {
+   "no": "Overføringskanal, E1-E2",
+   "en": "Transfer channel, E1-E2"
+  },
+  "parent": "ROOT/PS/E1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/JB1/WPA1",
+  "code": "WPA1",
+  "label": {
+   "no": "Overføringskanal",
+   "en": "Transfer channel"
+  },
+  "parent": "ROOT/PS/E1/JB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/JB1/WPA2",
+  "code": "WPA2",
+  "label": {
+   "no": "Terskel",
+   "en": "Weir"
+  },
+  "parent": "ROOT/PS/E1/JB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/JB2",
+  "code": "JB2",
+  "label": {
+   "no": "Tappe/Overføringstunnel. E1-E2",
+   "en": "Drain/transfer tunnel. E1-E2"
+  },
+  "parent": "ROOT/PS/E1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/JB2/HB1",
+  "code": "HB1",
+  "label": {
+   "no": "Bekkeinntak. E1",
+   "en": "Creek intake. E1"
+  },
+  "parent": "ROOT/PS/E1/JB2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/JB2/WPA1",
+  "code": "WPA1",
+  "label": {
+   "no": "Overføringstunnel",
+   "en": "Transfer tunnel"
+  },
+  "parent": "ROOT/PS/E1/JB2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/JB2/WPA2",
+  "code": "WPA2",
+  "label": {
+   "no": "Tappetunnel",
+   "en": "Drain tunnel"
+  },
+  "parent": "ROOT/PS/E1/JB2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/JB3",
+  "code": "JB3",
+  "label": {
+   "no": "Vassdrag, E1-E2",
+   "en": "Watercourse, E1-E2"
+  },
+  "parent": "ROOT/PS/E1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/LE2",
+  "code": "LE2",
+  "label": {
+   "no": "Værstasjon",
+   "en": "Weather station"
+  },
+  "parent": "ROOT/PS/E1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/E1/KB1",
+  "code": "KB1",
+  "label": {
+   "no": "Overløpssystem",
+   "en": "Spillway system"
+  },
+  "parent": "ROOT/PS/E1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/EX",
+  "code": "EX",
+  "label": {
+   "no": "Reguleringsystem X",
+   "en": "Regulation system X"
+  },
+  "parent": "ROOT/PS",
+  "comment": "Når det er flere magasin til kraftverket.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1",
+  "code": "F1",
+  "label": {
+   "no": "Kontrollsystem",
+   "en": "Control system"
+  },
+  "parent": "ROOT/PS",
+  "comment": "Notater:\nStyring på hele stasjonen, går mot driftsentralen.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1",
+  "code": ".LA1",
+  "label": {
+   "no": "Kontrollsystem, A1",
+   "en": "Control system, A1"
+  },
+  "parent": "ROOT/PS/F1",
+  "comment": "Notater:\nBetjener Aggregat og Transformator\n\nNotat:\n- Kan velge om man vil ha et samleobjekt som skap og samle sub-komponenter under skapet eller plassere sub-komponentene, som PLS etc., eller gå rett på sub-komponentene og legge til hvilket skap det er i som metadata.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LA1",
+  "code": ".LA1",
+  "label": {
+   "no": "Nødstyringsystem",
+   "en": "Emergency control system"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LA1/.UCA1",
+  "code": ".UCA1",
+  "label": {
+   "no": "Hovedskap, nødstyring",
+   "en": "Main cabinet, emergency control"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.LA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LA1/.SJB1",
+  "code": ".SJB1",
+  "label": {
+   "no": "Nødstoppbryter",
+   "en": "Emergency stop switch"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.LA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LB1",
+  "code": ".LB1",
+  "label": {
+   "no": "Vernsystem, A1",
+   "en": "Protection system, A1"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LB1/.KEB1",
+  "code": ".KEB1",
+  "label": {
+   "no": "Transformatorvern",
+   "en": "Transformer protection"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.LB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LB1/.KEB2",
+  "code": ".KEB2",
+  "label": {
+   "no": "Generatorvern",
+   "en": "Generator protection"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.LB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LB1/.KEB3",
+  "code": ".KEB3",
+  "label": {
+   "no": "Transformator/Generatorvern",
+   "en": "Transformer/generator protection"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.LB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LB1/.KEB4",
+  "code": ".KEB4",
+  "label": {
+   "no": "Vibrasjonsvern",
+   "en": "Vibration protection"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.LB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.KEB1",
+  "code": ".KEB1",
+  "label": {
+   "no": "PLS, Aggregatsyring, A1",
+   "en": "PLC, unit control, A1"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.KEC1",
+  "code": ".KEC1",
+  "label": {
+   "no": "IO Modul",
+   "en": "I/O module"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "comment": "Notat:\nViktig enhet som trenger tilsyn. En del av styreskapet.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.SZA1",
+  "code": ".SZA1",
+  "label": {
+   "no": "Operatørpanel",
+   "en": "Operator panel"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "comment": "Notat:\nPanel og/eller knapper",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.AE1",
+  "code": ".AE1",
+  "label": {
+   "no": "Styreskap 1, A1",
+   "en": "Control cabinet 1, A1"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.AE2",
+  "code": ".AE2",
+  "label": {
+   "no": "Styreskap 2, A1",
+   "en": "Control cabinet 2, A1"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.AE3",
+  "code": ".AE3",
+  "label": {
+   "no": "Periferiskap, Turbin, A1",
+   "en": "Peripheral cabinet, turbine, A1"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "comment": "Engelsk: Remote IO",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.AE4",
+  "code": ".AE4",
+  "label": {
+   "no": "Periferiskap, Generator, A1",
+   "en": "Peripheral cabinet, generator, A1"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "comment": "Engelsk: Remote IO",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.AE5",
+  "code": ".AE5",
+  "label": {
+   "no": "Motorstarterskap, A1",
+   "en": "Motor starter cabinet, A1"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.TFC1",
+  "code": ".TFC1",
+  "label": {
+   "no": "Måleverdienhet",
+   "en": "Measurement unit"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "comment": "Funksjon:\nMåling og visning av elektriske måleverdier. Viser spenning og strøm. Regner om til effekt og aktiv effekt.\n\nNotat:\nByttes og kalibreres.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.BHC1",
+  "code": ".BHC1",
+  "label": {
+   "no": "kWt-Måler",
+   "en": "kWh meter"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.JH1",
+  "code": ".JH1",
+  "label": {
+   "no": "Signalkabelsystem",
+   "en": "Signal cable system"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "comment": "Notat:\nInkluderes alle signalkabler\n- Muligens ta vekk fra produkt og ikke inkluderes i vedlikeholdssystemet.  Evt. ha systemet inkludert slik at feilrapporter (kabelfeil) kan legges på riktig system/komponent.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LA1~2",
+  "code": ".LA1",
+  "label": {
+   "no": "Synkroniseringssystem",
+   "en": "Synchronisation system"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "comment": "Notater:\nInkluderer logikk : Lukke bryter når alle betingelser er tilstede (når spenning og frekevens på generator er lik nettets spenning og frekvens).",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LA1~2/.KEB1",
+  "code": ".KEB1",
+  "label": {
+   "no": "Synk-sjekk-apparat",
+   "en": "Synchro-check device"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.LA1~2",
+  "comment": "Funksjonen: Sammenligner frekvensen mellom nett og generator",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.LA1~2/.KEB2",
+  "code": ".KEB2",
+  "label": {
+   "no": "Synkroniseringsenhet",
+   "en": "Synchronisation unit"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.LA1~2",
+  "comment": "Funksjon: Sender pulser, kommuniserer med regulatorerne. Den sender kommando til effektbryter når riktige  betingelsene for spenning og frekvens er tikstede.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.JH1~2",
+  "code": ".JH1",
+  "label": {
+   "no": "Prosessbus, A1",
+   "en": "Process bus, A1"
+  },
+  "parent": "ROOT/PS/F1/.LA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.JH1~2/.KED1",
+  "code": ".KED1",
+  "label": {
+   "no": "Switch",
+   "en": "Network switch"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.JH1~2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.JH1~2/.XGC1",
+  "code": ".XGC1",
+  "label": {
+   "no": "Patch panel",
+   "en": "Patch panel"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.JH1~2",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA1/.JH1~2/.WGB1",
+  "code": ".WGB1",
+  "label": {
+   "no": "Kabel",
+   "en": "Cable"
+  },
+  "parent": "ROOT/PS/F1/.LA1/.JH1~2",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA2",
+  "code": ".LA2",
+  "label": {
+   "no": "Kontrollsystem, Fellesanlegg",
+   "en": "Control system, common systems"
+  },
+  "parent": "ROOT/PS/F1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA2/.KEB1",
+  "code": ".KEB1",
+  "label": {
+   "no": "PLS",
+   "en": "PLC"
+  },
+  "parent": "ROOT/PS/F1/.LA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA2/.LB1",
+  "code": ".LB1",
+  "label": {
+   "no": "Vernsystem, Fellesanlegg",
+   "en": "Protection system, common systems"
+  },
+  "parent": "ROOT/PS/F1/.LA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA2/.LB1/.KEB1",
+  "code": ".KEB1",
+  "label": {
+   "no": "Vern, Avgang 1",
+   "en": "Protection, feeder 1"
+  },
+  "parent": "ROOT/PS/F1/.LA2/.LB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA2/.LB1/.KEB2",
+  "code": ".KEB2",
+  "label": {
+   "no": "Vern, Avgang X",
+   "en": "Protection, feeder X"
+  },
+  "parent": "ROOT/PS/F1/.LA2/.LB1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA2/.SZA1",
+  "code": ".SZA1",
+  "label": {
+   "no": "HMI, Fellesanlegg",
+   "en": "HMI, common systems"
+  },
+  "parent": "ROOT/PS/F1/.LA2",
+  "comment": "Panel og/eller knapper",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA2/.JH1",
+  "code": ".JH1",
+  "label": {
+   "no": "Prosessbus, Fellesanlegg",
+   "en": "Process bus, common systems"
+  },
+  "parent": "ROOT/PS/F1/.LA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA2/.JH1/.KED1",
+  "code": ".KED1",
+  "label": {
+   "no": "Switch",
+   "en": "Network switch"
+  },
+  "parent": "ROOT/PS/F1/.LA2/.JH1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA2/.JH1/.XGC1",
+  "code": ".XGC1",
+  "label": {
+   "no": "Patch panel",
+   "en": "Patch panel"
+  },
+  "parent": "ROOT/PS/F1/.LA2/.JH1",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA2/.JH1/.WGB1",
+  "code": ".WGB1",
+  "label": {
+   "no": "Kabel",
+   "en": "Cable"
+  },
+  "parent": "ROOT/PS/F1/.LA2/.JH1",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA3",
+  "code": ".LA3",
+  "label": {
+   "no": "Stasjonskontroll",
+   "en": "Station control"
+  },
+  "parent": "ROOT/PS/F1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA3/.SZA1",
+  "code": ".SZA1",
+  "label": {
+   "no": "HMI, Stasjon",
+   "en": "HMI, station"
+  },
+  "parent": "ROOT/PS/F1/.LA3",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA3/.",
+  "code": ".",
+  "label": {
+   "no": "Gateway",
+   "en": "Gateway"
+  },
+  "parent": "ROOT/PS/F1/.LA3",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA3/.~2",
+  "code": ".",
+  "label": {
+   "no": "RTU",
+   "en": "RTU"
+  },
+  "parent": "ROOT/PS/F1/.LA3",
+  "comment": "RTU: Remote terminal unit\n\nFunksjon: Protokollkonvertering. Stasjonsprotokoll til  eksternt/fjern-kontroll.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA3/.JH1",
+  "code": ".JH1",
+  "label": {
+   "no": "Stasjonsbus, stasjonskontroll",
+   "en": "Station bus, station control"
+  },
+  "parent": "ROOT/PS/F1/.LA3",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA3/.JH1/.KED1",
+  "code": ".KED1",
+  "label": {
+   "no": "Switch",
+   "en": "Network switch"
+  },
+  "parent": "ROOT/PS/F1/.LA3/.JH1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA3/.JH1/.XGC1",
+  "code": ".XGC1",
+  "label": {
+   "no": "Patch panel",
+   "en": "Patch panel"
+  },
+  "parent": "ROOT/PS/F1/.LA3/.JH1",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F1/.LA3/.JH1/.WGB1",
+  "code": ".WGB1",
+  "label": {
+   "no": "Kabel",
+   "en": "Cable"
+  },
+  "parent": "ROOT/PS/F1/.LA3/.JH1",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2",
+  "code": "F2",
+  "label": {
+   "no": "Kommunikasjonssystem",
+   "en": "Communication system"
+  },
+  "parent": "ROOT/PS",
+  "comment": "Slette, vil erstattes av stasjonsbus og prosessbus",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1",
+  "code": ".JH1",
+  "label": {
+   "no": "Fjernstyringssystem",
+   "en": "Remote control system"
+  },
+  "parent": "ROOT/PS/F2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH1",
+  "code": ".JH1",
+  "label": {
+   "no": "Elektronisk kommunikasjonssystem/skap (E-Kom), Inntak 1",
+   "en": "Electronic communication system/cabinet (E-Com), intake 1"
+  },
+  "parent": "ROOT/PS/F2/.JH1",
+  "comment": "JH: Datatransport",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH1/.KED1",
+  "code": ".KED1",
+  "label": {
+   "no": "Switch",
+   "en": "Network switch"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH1/n",
+  "code": "",
+  "label": {
+   "no": "Likeretter",
+   "en": "Rectifier"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH1",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH1/n~2",
+  "code": "",
+  "label": {
+   "no": "Batteri",
+   "en": "Battery"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH1",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH1/n~3",
+  "code": "",
+  "label": {
+   "no": "Ruter",
+   "en": "Router"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH1",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH1/.KEB1",
+  "code": ".KEB1",
+  "label": {
+   "no": "PLS",
+   "en": "PLC"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH1",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH1/n~4",
+  "code": "",
+  "label": {
+   "no": "Brannmur",
+   "en": "Firewall"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH1",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH2",
+  "code": ".JH2",
+  "label": {
+   "no": "Elektronisk kommunikasjonssystem/skap (E-Kom), Inntak 2",
+   "en": "Electronic communication system/cabinet (E-Com), intake 2"
+  },
+  "parent": "ROOT/PS/F2/.JH1",
+  "comment": "JH: Datatransport",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH2/.KED1",
+  "code": ".KED1",
+  "label": {
+   "no": "Switch",
+   "en": "Network switch"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH2/n",
+  "code": "",
+  "label": {
+   "no": "Likeretter",
+   "en": "Rectifier"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH2",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH2/n~2",
+  "code": "",
+  "label": {
+   "no": "Batteri",
+   "en": "Battery"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH2",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH2/n~3",
+  "code": "",
+  "label": {
+   "no": "Ruter",
+   "en": "Router"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH2",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH2/.KEB1",
+  "code": ".KEB1",
+  "label": {
+   "no": "PLS",
+   "en": "PLC"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH2",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH2/n~4",
+  "code": "",
+  "label": {
+   "no": "Brannmur",
+   "en": "Firewall"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH2",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH2~2",
+  "code": ".JH2",
+  "label": {
+   "no": "Fiberkabler",
+   "en": "Fibre cables"
+  },
+  "parent": "ROOT/PS/F2/.JH1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1/.JH2~2/.WGB1",
+  "code": ".WGB1",
+  "label": {
+   "no": "Kabel",
+   "en": "Cable"
+  },
+  "parent": "ROOT/PS/F2/.JH1/.JH2~2",
+  "comment": "Notater:\nFiberkabler termineres i patch panel",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.KG1",
+  "code": ".KG1",
+  "label": {
+   "no": "DR - Driftsradio/Nødsamband",
+   "en": "DR - Operations radio/emergency communication"
+  },
+  "parent": "ROOT/PS/F2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.KG2",
+  "code": ".KG2",
+  "label": {
+   "no": "Telefonisystem",
+   "en": "Telephone system"
+  },
+  "parent": "ROOT/PS/F2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/F2/.JH1_TFB1",
+  "code": ".JH1 (TFB1?)",
+  "label": {
+   "no": "Wifi-system, overvåking av systemer",
+   "en": "Wi-Fi system, system monitoring"
+  },
+  "parent": "ROOT/PS/F2",
+  "comment": "Notat:\n- Kan også flyttes til CW.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1",
+  "code": "H1",
+  "label": {
+   "no": "Avløpsystem",
+   "en": "Drainage system"
+  },
+  "parent": "ROOT/PS",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB1",
+  "code": ".JB1",
+  "label": {
+   "no": "Avløpstunnel, Turbin",
+   "en": "Tailrace tunnel, turbine"
+  },
+  "parent": "ROOT/PS/H1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB1/valg",
+  "code": "",
+  "label": {
+   "no": "Hvis sugerørsluken er en del av avløpet",
+   "en": "If the draft tube gate is part of the tailrace"
+  },
+  "parent": "ROOT/PS/H1/.JB1",
+  "kind": "choice",
+  "comment": "Relevant hvis:\n-  Pelton eller andre unike konfigurasjoner på Kaplan og Francis\n- Hvis det er en felles luke for flere aggregater, langt ned i tunnelen, legges den som et eget system under H, men hvis det er en per aggregat legges systemet under turbin og sugerørssystem.",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB1/valg/.KA1",
+  "code": ".KA1",
+  "label": {
+   "no": "Sugerørslukesystem, Turbin, A1",
+   "en": "Draft tube gate system, turbine, A1"
+  },
+  "parent": "ROOT/PS/H1/.JB1/valg",
+  "comment": "Notater og diskusjon:\nFunksjon: for å stenge  vann ute slik at turbinen kan vedlikeholdes.\nSystemgrensen mellom aggregat og utløp. Hvis vi skal følge prinsippene (mottakers prinsipp), skal den høre til utløpet.\nFrancis: I avslutningen av sugerøret. En per aggregat.\nPelton: Ulike løsninger. Kan være en for flere.\n\nProdukt: Grensen går etter luke og før avløpstunnel. Sugerørsluke er en del av turbinen. ...",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB1/valg/.KA1/.WPA1",
+  "code": ".WPA1",
+  "label": {
+   "no": "Sugerørsluke, Turbin, Agg 1",
+   "en": "Draft tube gate, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/H1/.JB1/valg/.KA1",
+  "ebl_code": "KX.411.XXX.410.110",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB1/valg/.KA1/.WPA1~2",
+  "code": ".WPA1",
+  "label": {
+   "no": "Opptrekk, Sugerørsluke,Turbin, Agg 1",
+   "en": "Hoist, draft tube gate, turbine, unit 1"
+  },
+  "parent": "ROOT/PS/H1/.JB1/valg/.KA1",
+  "ebl_code": "KX.411.XXX.410.110",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB2",
+  "code": ".JB2",
+  "label": {
+   "no": "Forbislippningssystem",
+   "en": "Bypass release system"
+  },
+  "parent": "ROOT/PS/H1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB2/n",
+  "code": "",
+  "label": {
+   "no": "Forbislippningsventil",
+   "en": "Bypass release valve"
+  },
+  "parent": "ROOT/PS/H1/.JB2",
+  "ebl_code": "KX.411.XXX.410.114",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB3",
+  "code": ".JB3",
+  "label": {
+   "no": "Lenseanlegg/system",
+   "en": "Dewatering system"
+  },
+  "parent": "ROOT/PS/H1",
+  "ebl_code": "XX.487",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB3/.QB1",
+  "code": ".QB1",
+  "label": {
+   "no": "Lensekum",
+   "en": "Dewatering sump"
+  },
+  "parent": "ROOT/PS/H1/.JB3",
+  "ebl_code": "XX.487.002",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB3/.GPA1",
+  "code": ".GPA1",
+  "label": {
+   "no": "Lensepumpe 1",
+   "en": "Dewatering pump 1"
+  },
+  "parent": "ROOT/PS/H1/.JB3",
+  "ebl_code": "XX.487.002.100",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB3/.GPA1/.MMA1",
+  "code": ".MMA1",
+  "label": {
+   "no": "Motor, Lensepumpe 1",
+   "en": "Motor, dewatering pump 1"
+  },
+  "parent": "ROOT/PS/H1/.JB3/.GPA1",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB3/.GPA2",
+  "code": ".GPA2",
+  "label": {
+   "no": "Lensepumpe 2",
+   "en": "Dewatering pump 2"
+  },
+  "parent": "ROOT/PS/H1/.JB3",
+  "ebl_code": "XX.487.002.100",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/H1/.JB3/.GPA2/.MMA1",
+  "code": ".MMA1",
+  "label": {
+   "no": "Motor, Lensepumpe 2",
+   "en": "Motor, dewatering pump 2"
+  },
+  "parent": "ROOT/PS/H1/.JB3/.GPA2",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/n",
+  "code": "",
+  "label": {
+   "no": "Forbislippningssystem",
+   "en": "Bypass release system"
+  },
+  "parent": "ROOT/PS",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/PS/n/n",
+  "code": "",
+  "label": {
+   "no": "Forbislippningsventil",
+   "en": "Bypass release valve"
+  },
+  "parent": "ROOT/PS/n",
+  "ebl_code": "KX.411.XXX.410.114",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/CW",
+  "code": "CW",
+  "label": {
+   "no": "CW",
+   "en": "CW"
+  },
+  "parent": "ROOT",
+  "en_draft": true
+ },
+ {
+  "id": "ROOT/CW/n",
+  "code": "",
+  "label": {
+   "no": "Administrasjonsbygg",
+   "en": "Administration building"
+  },
+  "parent": "ROOT/CW",
+  "en_draft": true
+ }
 ]

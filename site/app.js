@@ -1,7 +1,7 @@
 (() => {
 const UI = {
-  no: {title: "RDS Vannkraft-bibliotek", types: "Typetabell", map: "Kraftverksmal", search: "Søk…", expand: "Åpne alle", collapse: "Lukk alle", both: "Begge", dl: "Last ned språk:", code: "Kode", parent: "Overordnet", all: "Alle", foot: "Kun koder og egne foretrukne termer. Data: CC-BY-4.0, kode: MIT."},
-  en: {title: "RDS Hydro Library", types: "Type table", map: "Plant template", search: "Search…", expand: "Expand all", collapse: "Collapse all", both: "Both", dl: "Download language:", code: "Code", parent: "Parent", all: "All", foot: "Codes and our own preferred terms only. Data: CC-BY-4.0, code: MIT."}
+  no: {title: "RDS Vannkraft-bibliotek", types: "Typetabell", map: "Kraftverksmal", search: "Søk…", expand: "Åpne alle", collapse: "Lukk alle", both: "Begge", dl: "Last ned språk:", code: "Kode", parent: "Overordnet", all: "Alle", foot: "Kun koder og egne foretrukne termer. Data: CC-BY-4.0, kode: MIT.", choice: "Valg", or: "eller", choiceNote: "Valg: velg én av alternativene under.", select: "Velg en node for å se informasjon.", ebl: "EBL-kode", comment: "Kommentar", type: "Type", draft: "Engelsk term er et utkast som venter på godkjenning."},
+  en: {title: "RDS Hydro Library", types: "Type table", map: "Plant template", search: "Search…", expand: "Expand all", collapse: "Collapse all", both: "Both", dl: "Download language:", code: "Code", parent: "Parent", all: "All", foot: "Codes and our own preferred terms only. Data: CC-BY-4.0, code: MIT.", choice: "Choice", or: "or", choiceNote: "Choice: pick one of the alternatives below.", select: "Select a node to see its information.", ebl: "EBL code", comment: "Comment", type: "Type", draft: "English term is a draft awaiting approval."}
 };
 const $ = s => document.querySelector(s);
 const nav = (navigator.language || "en").toLowerCase();
@@ -66,17 +66,38 @@ function renderTable() {
 
 const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
 
+let selected = null;
+const byId = () => Object.fromEntries(plant.map(n => [n.id, n]));
+
 function renderMap() {
   const kids = {};
   plant.forEach(n => (kids[n.parent || ""] ||= []).push(n));
-  const build = p => `<ul>${(kids[p] || []).map(n => {
-    const has = (kids[n.code] || []).length, o = open.has(n.code);
-    return `<li><span class="tg" data-c="${esc(n.code)}">${has ? (o ? "▾" : "▸") : "•"}</span><span class="node"><span class="code">${esc(n.code)}</span>${esc(lab(n))}</span>${has && o ? build(n.code) : ""}</li>`;
+  const build = p => `<ul${(byId()[p] || {}).kind === "choice" ? ' class="alts"' : ""}>${(kids[p] || []).map(n => {
+    const has = (kids[n.id] || []).length, o = open.has(n.id), ch = n.kind === "choice";
+    const cls = "node" + (ch ? " choice" : "") + (n.id === selected ? " sel" : "");
+    const title = ch ? `<span class="code">${t("choice")}</span>` : (n.code ? `<span class="code">${esc(n.code)}</span>` : "");
+    return `<li data-or="${t("or")}"><span class="tg" data-c="${esc(n.id)}">${has ? (o ? "▾" : "▸") : "•"}</span><span class="${cls}" data-s="${esc(n.id)}">${title}${esc(lab(n))}</span>${has && o ? build(n.id) : ""}</li>`;
   }).join("")}</ul>`;
   $("#mm").innerHTML = build("");
-  $("#mm").onclick = e => { const c = e.target.dataset.c; if (c) { open.has(c) ? open.delete(c) : open.add(c); renderMap(); } };
+  $("#mm").onclick = e => {
+    const c = e.target.dataset.c, s = e.target.closest("[data-s]");
+    if (c) { open.has(c) ? open.delete(c) : open.add(c); renderMap(); }
+    else if (s) { selected = s.dataset.s; renderMap(); }
+  };
+  renderInfo();
 }
 
+function renderInfo() {
+  const n = byId()[selected], el = $("#info");
+  if (!n) { el.innerHTML = `<p class="muted">${t("select")}</p>`; return; }
+  const row = (k, v) => v ? `<dt>${k}</dt><dd>${esc(v).replace(/\n/g, "<br>")}</dd>` : "";
+  const names = ["no", "en", ...langs.filter(l => l !== "no" && l !== "en")].filter(l => n.label[l]);
+  el.innerHTML = `<h2>${esc(lab(n))}</h2>${n.kind === "choice" ? `<p class="badge">${t("choiceNote")}</p>` : ""}<dl>`
+    + row(t("code"), n.code)
+    + names.map(l => row(l === lang ? l.toUpperCase() + " ●" : l.toUpperCase(), n.label[l])).join("")
+    + row(t("ebl"), n.ebl_code) + row(t("comment"), n.comment) + row(t("type"), n.type)
+    + `</dl>` + (n.en_draft ? `<p class="muted">${t("draft")}</p>` : "");
+}
 function pickLangs() { const v = $("#dl-lang").value; return v === "both" ? langs : [v]; }
 
 function download(kind) {
@@ -87,9 +108,9 @@ function download(kind) {
     rows = types.map(r => head.map(h => r[h] || ""));
     json = types.map(r => Object.fromEntries(head.map(h => [h, r[h] || ""])));
   } else {
-    head = ["code", ...L.map(l => "label_" + l), "parent", "type"];
-    rows = plant.map(n => [n.code, ...L.map(l => n.label[l] || ""), n.parent || "", n.type || ""]);
-    json = plant.map(n => ({code: n.code, label: Object.fromEntries(L.map(l => [l, n.label[l] || ""])), parent: n.parent || null, type: n.type || null}));
+    head = ["id", "code", ...L.map(l => "label_" + l), "parent", "kind", "ebl_code", "type", "comment"];
+    rows = plant.map(n => [n.id, n.code, ...L.map(l => n.label[l] || ""), n.parent || "", n.kind || "", n.ebl_code || "", n.type || "", n.comment || ""]);
+    json = plant.map(n => ({...n, label: Object.fromEntries(L.map(l => [l, n.label[l] || ""]))}));
   }
   const name = tpl ? "plant_template" : "types";
   if (fmt === "json") return save(new Blob([JSON.stringify(json, null, 2)], {type: "application/json"}), name + ".json");
@@ -113,7 +134,7 @@ async function init() {
   langs = ["no", "en", ...langs.filter(l => l !== "no" && l !== "en")];
   attrs = cols.filter(h => h.startsWith("attr_"));
   plant = p;
-  plant.filter(n => !n.parent).forEach(n => open.add(n.code));
+  plant.filter(n => !n.parent).forEach(n => open.add(n.id));
   document.querySelectorAll("#lang button").forEach(b => b.onclick = () => { lang = b.dataset.l; applyLang(); });
   document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => {
     $("#types").hidden = b.dataset.t !== "types"; $("#map").hidden = b.dataset.t !== "map";
@@ -122,8 +143,8 @@ async function init() {
   $("#tab-types").classList.add("on");
   document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => download(b.dataset.f));
   $("#q").oninput = renderTable;
-  $("#expand").onclick = () => { plant.forEach(n => open.add(n.code)); renderMap(); };
-  $("#collapse").onclick = () => { open.clear(); plant.filter(n => !n.parent).forEach(n => open.add(n.code)); renderMap(); };
+  $("#expand").onclick = () => { plant.forEach(n => open.add(n.id)); renderMap(); };
+  $("#collapse").onclick = () => { open.clear(); plant.filter(n => !n.parent).forEach(n => open.add(n.id)); renderMap(); };
   applyLang();
 }
 init();

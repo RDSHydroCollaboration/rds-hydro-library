@@ -7,6 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 errors = []
+ALLOWED_NODE_FIELDS = {"id", "code", "label", "parent", "type", "kind", "ebl_code", "comment", "en_draft"}
 
 
 def err(msg):
@@ -72,24 +73,28 @@ def validate_template(type_codes):
             err(f"plant_template.json: {'/'.join(map(str, e.path))}: {e.message}")
     except ImportError:
         print("jsonschema not installed; running built-in checks only")
-    codes = {}
+    ids = {}
     for n in data:
-        code = n.get("code")
-        if code in codes:
-            err(f"plant_template.json: duplicate code '{code}'")
-        codes[code] = n.get("parent") or ""
+        nid = n.get("id")
+        if nid in ids:
+            err(f"plant_template.json: duplicate id '{nid}'")
+        ids[nid] = n.get("parent") or ""
         label = n.get("label") or {}
         for lang in ("no", "en"):
             if not str(label.get(lang) or "").strip():
-                err(f"plant_template.json: '{code}' missing label.{lang}")
+                err(f"plant_template.json: '{nid}' missing label.{lang}")
         t = n.get("type")
         if t and t not in type_codes:
-            err(f"plant_template.json: '{code}' references unknown type '{t}'")
-        if set(n) - {"code", "label", "parent", "type"}:
-            err(f"plant_template.json: '{code}' has unexpected fields")
-    check_hierarchy(codes, "plant_template.json")
-    if sum(1 for p in codes.values() if not p) != 1:
+            err(f"plant_template.json: '{nid}' references unknown type '{t}'")
+        if set(n) - ALLOWED_NODE_FIELDS:
+            err(f"plant_template.json: '{nid}' has unexpected fields")
+    check_hierarchy(ids, "plant_template.json")
+    if sum(1 for p in ids.values() if not p) != 1:
         err("plant_template.json: expected exactly one root node")
+    parents = set(ids.values())
+    for n in data:
+        if n.get("kind") == "choice" and n.get("id") not in parents:
+            err(f"plant_template.json: choice '{n.get('id')}' has no alternatives")
 
 
 def main():
